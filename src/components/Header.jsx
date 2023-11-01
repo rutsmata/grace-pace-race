@@ -5,22 +5,13 @@ export default function Header () {
     <nav className="navbar navbar-light bg-light">
     <div className="container">
       <a className="navbar-brand" href="#">
-        <img src="public/imgs/logo.svg" alt="" />
+        <img src="public/imgs/gracepacerace-logo.jpg" alt="" />
       </a>
       <div className="socials">
-        <a href="javascript:void(0)">
+        <a href="https://www.facebook.com/gracepacerace/">
           <i className="ti-facebook" />
         </a>
-        <a href="javascript:void(0)">
-          <i className="ti-twitter" />
-        </a>
-        <a href="javascript:void(0)">
-          <i className="ti-pinterest-alt" />
-        </a>
-        <a href="javascript:void(0)"> <i className="ti-instagram" />
-        </a>
-        <a href="javascript:void(0)">
-          <i className="ti-youtube" />
+        <a href="https://www.instagram.com/gracepacerace/"> <i className="ti-instagram" />
         </a>
       </div>
     </div>

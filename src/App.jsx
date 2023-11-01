@@ -11,6 +11,7 @@ import SubArticlesLine3 from "./components/SubArticlesLine3"
 import SubArticlesLine2 from "./components/SubArticlesLine2"
 import articles from "./assets/articles"
 import ArticleList from "./components/ArticleList"
+import Timer from "./components/Timer"
 
 
 
@@ -27,6 +28,7 @@ function App() {
     <div className="container">
       <section>
         <ArticleList articles={articles} />
+        <Timer startTime={100}/>
       </section>
       <hr />
       <div className="page-container">

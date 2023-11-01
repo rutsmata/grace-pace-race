@@ -18,7 +18,10 @@
 7. Create folder components within src folder
 8. Create ArticleList component and use props
 9. Import the Component in App.jsx and use in the jsx
-9.1 <NavBar>{JS expressions only can be used in the {} props; statements such as if, for …is not allowed}<NavBar/>
+9.1 <NavBar>{JS expressions (function expression, arrow functions) only can be used in the {} props; statements (function declaration) such as if, for …is not allowed. Ternary operator is possible}<NavBar/>
 9.2 <NavBar articles={articles}/> - we create property articles which data are the object articles from the assets folder. We could have as many as properties, described one after another
-9.3 The ArticleList Component may now accept props. At the HTML code we may use properties again thus cascading down to another level, e.g Article.js
-
+9.3 The ArticleList Component may now accept props. At the HTML code we may use properties again thus cascading down to another level, e.g Article.jsx
+10. Create Article.jsx Component which is meant to be reused
+11. Hook - adds new functionality to a Component
+11.1 useState: 2:01:43 - we create create as many states as needed within a Component. The initial value could also be null or undefined
+Note: Every Component is pre-rendered should any of its states is changes

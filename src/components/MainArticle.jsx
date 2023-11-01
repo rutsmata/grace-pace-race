@@ -1,3 +1,5 @@
+import ArticleSummary from "./ArticleSummary";
+
 export default function MainArticle () {
     return (
         <div>
@@ -5,13 +7,7 @@ export default function MainArticle () {
 <div className="card">
             <div className="card-header text-center">
               <h5 className="card-title">Voluptates Corporis Placeat</h5>
-              <small className="small text-muted">
-                January 24 2019
-                <span className="px-2">-</span>
-                <a href="#" className="text-muted">
-                  32 Comments
-                </a>
-              </small>
+                <ArticleSummary/>
             </div>
             <div className="card-body">
               <div className="blog-media">

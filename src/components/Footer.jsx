@@ -1,3 +1,5 @@
+import Counter from "./Counter"
+
 export default function Footer () {
     return (
         <div>
@@ -23,12 +25,9 @@ export default function Footer () {
               >
                 <i className="ti-twitter pr-1" /> 321,534
               </a>
-              <a
-                href="javascript:void(0)"
-                className="font-weight-bold text-muted mr-4"
-              >
-                <i className="ti-pinterest-alt pr-1" /> 543,312
-              </a>
+
+                <Counter/>
+
               <a
                 href="javascript:void(0)"
                 className="font-weight-bold text-muted mr-4"

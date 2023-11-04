@@ -1,4 +1,14 @@
-export default function SubArticleLine1 () {
+
+export default function SubArticleLine1 ({
+  key, 
+  title, 
+  description, 
+  published, 
+  author, 
+  img 
+} ) {
+
+
 
     return (
         <div>
@@ -9,14 +19,14 @@ export default function SubArticleLine1 () {
               <div className="card text-center mb-5">
                 <div className="card-header p-0">
                   <div className="blog-media">
-                    <img src="public/imgs/blog-2.jpg" alt="" className="w-100" />
+                    <img src={img} alt="" className="w-100" />
                     <a href="#" className="badge badge-primary">
                       #Placeat
                     </a>
                   </div>
                 </div>
                 <div className="card-body px-0">
-                  <h5 className="card-title mb-2">Voluptates Corporis Placeat</h5>
+                  <h5 className="card-title mb-2">{title}</h5>
                   <small className="small text-muted">
                     January 20 2019
                     <span className="px-2">-</span>
@@ -25,10 +35,7 @@ export default function SubArticleLine1 () {
                     </a>
                   </small>
                   <p className="my-2">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos
-                    saepe dolores et nostrum porro odit reprehenderit animi, est
-                    ratione fugit aspernatur ipsum. Nostrum placeat hic saepe
-                    voluptatum dicta ipsum beatae.
+                    {description}
                   </p>
                 </div>
                 <div className="card-footer p-0 text-center">
@@ -44,7 +51,7 @@ export default function SubArticleLine1 () {
               
           </div>
 
-            <div className="col-lg-6">
+            {/* <div className="col-lg-6">
               <div className="card text-center mb-5">
                 <div className="card-header p-0">
                   <div className="blog-media">
@@ -79,7 +86,7 @@ export default function SubArticleLine1 () {
                   </a>
                 </div>
               </div>
-            </div>
+            </div> */}
             </div>
 
         </div>

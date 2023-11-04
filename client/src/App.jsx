@@ -7,12 +7,12 @@ import NavBar from "./components/NavBar"
 import Sidebar from "./components/Sidebar"
 import SubArticlesLine1 from "./components/SubArticlesLine1"
 import LoadMorePostsButton from "./components/LoadMorePostsButton"
-import SubArticlesLine3 from "./components/SubArticlesLine3"
 import SubArticlesLine2 from "./components/SubArticlesLine2"
-import articles from "./assets/articles"
 import ArticleList from "./components/ArticleList"
 import Timer from "./components/Timer"
 import TestDriveForm from "./components/TestDriveRegistrationForm"
+import HomePage from "./components/HomePage"
+import ArticleDetails from "./components/articleDetails"
 
 
 
@@ -28,28 +28,32 @@ function App() {
 
     <MainPhoto/>
 
+    <HomePage/>
+
     {/* <TestDriveForm/> */}
 
     <div className="container">
-      <section>
-        <ArticleList articles={articles} />
-        <Timer startTime={100}/>
-      </section>
-      <hr />
+      {/* <section> */}
+        <ArticleList />
+        {/* <Timer startTime={100}/> */}
+      {/* </section> */}
+      {/* <hr /> */}
       <div className="page-container">
         <div className="page-content">
-        <MainArticle/>
-          <hr />
+        {/* <MainArticle/> */}
+          {/* <hr /> */}
          
-          <SubArticlesLine1/>
+          {/* <SubArticlesLine1/> */}
          
           <SubArticlesLine2/>
          
-          <SubArticlesLine3/>
+          {/* <SubArticlesLine3/> */}
+
+          <ArticleDetails/>
         
 
         </div>
-        <Sidebar/>
+        {/* <Sidebar/> */}
         </div>
       </div>
     <LoadMorePostsButton/>

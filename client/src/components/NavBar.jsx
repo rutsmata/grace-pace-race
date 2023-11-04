@@ -30,7 +30,7 @@ export default function NavBar () {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="single-post.html">
-                Електрически автомобили
+                Създай новина
               </a>
             </li>
             <li className="nav-item dropdown">
@@ -43,14 +43,14 @@ export default function NavBar () {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Моторспорт
+                Профил
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a className="dropdown-item" href="#">
-                  Action
+                  Създай новина
                 </a>
                 <a className="dropdown-item" href="#">
-                  Another action
+                  Запиши тест драйв
                 </a>
                 <div className="dropdown-divider" />
                 <a className="dropdown-item" href="#">
@@ -70,14 +70,14 @@ export default function NavBar () {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="index.html">
-                Вход
+                Заглавна страница
               </a>
             </li>
           </ul>
           <div className="navbar-nav ml-auto">
             <li className="nav-item">
               <a href="components.html" className="ml-4 btn btn-dark mt-1 btn-sm">
-                Components
+                Вход
               </a>
             </li>
           </div>

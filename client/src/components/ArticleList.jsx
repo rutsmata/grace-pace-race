@@ -1,4 +1,7 @@
 import Article from "./Article"
+import SubArticleLine1 from "./SubArticlesLine1"
+import SubArticleLine2 from "./SubArticlesLine2"
+
 import { useEffect, useState } from "react"
 
 export default function ArticleList (props) {
@@ -17,7 +20,7 @@ export default function ArticleList (props) {
     return (
 
         <div>
-            <h1>TEST2</h1>
+            {/* <h1>Server data Article</h1>
             <div>
                 {articles.map(article => (
                     <Article
@@ -28,30 +31,42 @@ export default function ArticleList (props) {
                         author={article.author}
                         img={article.img}
                     />
+                    
+                ))}
+            </div> */}
+
+            {/* <h1>Server data Line 1</h1>
+            <div>
+                {articles.map(article => (
+                    <SubArticleLine1
+                        key={article._id}
+                        title={article.title}
+                        description={article.description}
+                        published={article.published}
+                        author={article.author}
+                        img={article.img}
+                    />
+                    
+                ))}
+            </div> */}
+
+            <h1>Server data Line 2</h1>
+            <div>
+                {articles.map(article => (
+                    <SubArticleLine2
+                        key={article._id}
+                        title={article.title}
+                        description={article.description}
+                        published={article.published}
+                        author={article.author}
+                        img={article.img}
+                    />
+                    
                 ))}
             </div>
+            
 
-        {/* <div className="feature-posts">
-          <a href="single-post.html" className="feature-post-item">
-            <span>Последни новини</span>
-          </a>
-          <a href="single-post.html" className="feature-post-item">
-            <img src="public/imgs/Citroen Ami 1.webp" className="w-100" alt="" />
-            <div className="feature-post-caption"><Article content={props.articles[0]}/></div>
-          </a>
-          <a href="single-post.html" className="feature-post-item">
-            <img src="public/imgs/VW Touareg 1.webp" className="w-100" alt="" />
-            <div className="feature-post-caption"><Article content={props.articles[1]}/></div>
-          </a>
-          <a href="single-post.html" className="feature-post-item">
-            <img src="public/imgs/BMW i7 main.webp" className="w-100" alt="" />
-            <div className="feature-post-caption"><Article content={props.articles[2]}/></div>
-          </a>
-          <a href="single-post.html" className="feature-post-item">
-            <img src="public/imgs/Volvo Prime Video main.webp" className="w-100" alt="" />
-            <div className="feature-post-caption"><Article content={props.articles[3]}/></div>
-          </a>
-        </div> */}
+
         </div>
     )
 

@@ -27,7 +27,7 @@ export default function ArticleList (props) {
                         key={article._id}
                         title={article.title}
                         description={article.description}
-                        published={article.published}
+                        type={article.type}
                         author={article.author}
                         img={article.img}
                     />
@@ -42,7 +42,7 @@ export default function ArticleList (props) {
                         key={article._id}
                         title={article.title}
                         description={article.description}
-                        published={article.published}
+                        type={article.type}
                         author={article.author}
                         img={article.img}
                     />
@@ -57,7 +57,7 @@ export default function ArticleList (props) {
                         key={article._id}
                         title={article.title}
                         description={article.description}
-                        published={article.published}
+                        type={article.type}
                         author={article.author}
                         img={article.img}
                     />

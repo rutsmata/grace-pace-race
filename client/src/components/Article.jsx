@@ -2,7 +2,7 @@ export default function Article ({
     key, 
     title, 
     description, 
-    published, 
+    type, 
     author, 
     img 
 } ) {

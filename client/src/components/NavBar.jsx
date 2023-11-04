@@ -60,7 +60,7 @@ export default function NavBar () {
             </li>
             <li className="nav-item">
               <a className="nav-link disabled" href="#">
-                Disabled
+                Електрически
               </a>
             </li>
             <li className="nav-item">

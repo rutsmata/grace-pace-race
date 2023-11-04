@@ -10,9 +10,12 @@ import LoadMorePostsButton from "./components/LoadMorePostsButton"
 import SubArticlesLine2 from "./components/SubArticlesLine2"
 import ArticleList from "./components/ArticleList"
 import Timer from "./components/Timer"
-import TestDriveForm from "./components/TestDriveRegistrationForm"
+import TestDriveForm from "./components/TestDriveForm"
 import HomePage from "./components/HomePage"
 import ArticleDetails from "./components/articleDetails"
+import Login from "./components/login"
+import Register from "./components/register"
+import CreateArticle from "./components/CreateArticle"
 
 
 
@@ -50,12 +53,21 @@ function App() {
           {/* <SubArticlesLine3/> */}
 
           <ArticleDetails/>
+
+          <Login/>
+
+          <Register/>
+
+          <CreateArticle/>
         
+          <TestDriveForm/>
 
         </div>
         {/* <Sidebar/> */}
         </div>
       </div>
+
+
     <LoadMorePostsButton/>
 
     {/* <InstagramWrapper/> */}

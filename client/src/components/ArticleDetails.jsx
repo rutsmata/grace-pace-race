@@ -1,3 +1,5 @@
+import styles from './ArticleDetails.module.css'
+
 export default function ArticleDetails () {
 
   return (
@@ -6,12 +8,7 @@ export default function ArticleDetails () {
           <h1 className="title">
             Citroen Ami променя играта в микромобилността | Тест1
           </h1>
-          <ol className="breadcrumb pb-0">
-            <li className="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li className="breadcrumb-item active" aria-current="page">
-              Citroen Ami променя играта в микромобилността | Тест2
-            </li>
-          </ol>
+          
         </header>
 
         <section className="container">
@@ -19,18 +16,12 @@ export default function ArticleDetails () {
       <div className="page-content">
         <div className="card">
           <div className="card-header pt-0">
-            <h3 className="card-title mb-4">
-              Citroen Ami променя играта в микромобилността | Тест3
-            </h3>
+
             <div className="blog-media mb-4">
               <img src="public/imgs/blog-6.jpg" alt="" className="w-100" />
               <a href="#" className="badge badge-primary">#Salupt</a>
             </div>
             <small className="small text-muted">
-              <a href="#" className="text-muted">BYY Admin</a>
-              <span className="px-2">·</span>
-              <span>January 24 2019</span>
-              <span className="px-2">·</span>
               <a href="#" className="text-muted">32 Comments</a>
             </small>
           </div>
@@ -139,24 +130,13 @@ export default function ArticleDetails () {
                     placeholder="Enter Your Comment Here"
                   ></textarea>
                 </div>
-                <div className="col-sm-4 form-group">
-                  <input type="text" className="form-control" value="Name" />
-                </div>
-                <div className="col-sm-4 form-group">
-                  <input
-                    type="email"
-                    className="form-control"
-                    placeholder="Email"
-                  />
-                </div>
-                <div className="col-sm-4 form-group">
-                  <input
-                    type="url"
-                    className="form-control"
-                    placeholder="Website"
-                  />
-                </div>
-                <div className="form-group col-12">
+         
+                
+                
+                <div className="form-group col-18">
+                <a href="/posts/{{post._id}}/edit" className={styles['edit-btn']}>Edit</a>
+                <a href="/posts/{{post._id}}/delete" className={styles['del-btn']}>Delete</a>
+                
                   <button className="btn btn-primary btn-block">
                     Post Comment
                   </button>

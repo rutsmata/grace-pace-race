@@ -2,7 +2,7 @@ export default function SubArticleLine2 ({
   key, 
   title, 
   description, 
-  published, 
+  type, 
   author, 
   img 
 } ) {
@@ -40,7 +40,7 @@ export default function SubArticleLine2 ({
                     href="single-post.html"
                     className="btn btn-outline-dark btn-sm"
                   >
-                    READ MORE
+                    DETAILS
                   </a>
                 </div>
               </div>

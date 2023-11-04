@@ -23,5 +23,9 @@
 9.3 The ArticleList Component may now accept props. At the HTML code we may use properties again thus cascading down to another level, e.g Article.jsx
 10. Create Article.jsx Component which is meant to be reused
 11. Hook - adds new functionality to a Component
-11.1 useState: 2:01:43 - we create create as many states as needed within a Component. The initial value could also be null or undefined
+11.1 useState: const [doubled, setDoubled] = useState(doubledArr) - we create create as many states as needed within a Component. The initial value could also be null or undefined or false
 Note: Every Component is pre-rendered should any of its states is changes
+12. Key: <li key ={Math.floor(Math.random() * 1000000)}></li>
+13. <button onClick={onClick}>Remove</button>
+14. <button onClick={() => setCount(c => c + 1)}>Remove</button>
+15. useEffect: useEffect (() => {someFunction}, [dependency array])

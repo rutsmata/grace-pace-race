@@ -12,6 +12,7 @@ import SubArticlesLine2 from "./components/SubArticlesLine2"
 import articles from "./assets/articles"
 import ArticleList from "./components/ArticleList"
 import Timer from "./components/Timer"
+import TestDriveForm from "./components/TestDriveRegistrationForm"
 
 
 
@@ -24,6 +25,8 @@ function App() {
     <NavBar/>
 
     <MainPhoto/>
+
+    <TestDriveForm/>
 
     <div className="container">
       <section>
@@ -49,9 +52,9 @@ function App() {
       </div>
     <LoadMorePostsButton/>
 
-    <InstagramWrapper/>
+    {/* <InstagramWrapper/> */}
 
-    <Footer/>
+    {/* <Footer/> */}
   
     </div>
   )

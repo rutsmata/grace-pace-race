@@ -63,6 +63,16 @@ export default function NavBar () {
                 Disabled
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="index.html">
+                Регистрация
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="index.html">
+                Вход
+              </a>
+            </li>
           </ul>
           <div className="navbar-nav ml-auto">
             <li className="nav-item">

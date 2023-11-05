@@ -1,14 +1,37 @@
-const baseUrl = 'http://localhost:3030/jsonstore/articles';
+const baseUrl = "http://localhost:3030/jsonstore/articles";
 
 export const getAll = async () => {
-  try {
+
     const response = await fetch(baseUrl);
     const result = await response.json();
 
     const data = Object.values(result);
 
     return data;
-  } catch (error) {
-    console.log(error);
-  }
+
+
 };
+
+export const create = async (data) => {
+    const body = {
+        title: data.title,  
+        description: data.description,  
+        type: data.type,  
+        author: data.author,
+        createdAt: new Date().toISOString(), 
+        img: data.img
+    }
+ 
+    const response = await fetch(baseUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    })
+
+    const result = await response.json()
+    console.log(result);
+
+    return result
+}

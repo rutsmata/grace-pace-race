@@ -3,34 +3,44 @@ import css from './Login.module.css'
 
 export default function CreateArticleModal ({
   hideModal,
+  onArticleCreate,
 }) {
     return (
         <div>
               
               <div className={styles.createSection}>
 
-                <form method="post" className={styles.createForm}>
+                <form onSubmit={onArticleCreate} method="post" className={styles.createForm}>
                   <h2>Create Article</h2>
                   <ul className={css.noBullet}>
+                  <li>
+                      <label htmlFor="author">Author:</label>
+                      <input
+                        type="text"
+                        className={css.inputFields}
+                        id="author"
+                        placeholder="First Name & Last Name"
+                        name="author"
+                      />
+                    </li>
                     <li>
                       <label htmlFor="title">Title:</label>
                       <input
                         type="text"
                         className={css.inputFields}
-                        id="name"
-                        placeholder="Title"
-                        name="name"
-                        value=""
+                        id="title"
+                        placeholder="Article Title"
+                        name="title"
                       />
                     </li>
                     
                     <li>
                       <label htmlFor="type">Type:</label>
                       <select id="type" name="type" className={css.inputFields}>
-                        <option selected>Select</option>
-                      <option value="electric">Electric</option>
-                      <option value="hybrid">Hybrid</option>
-                      <option value="standard">Standard</option>
+                        <option >Select Genre</option>
+                      <option >Electric</option>
+                      <option >Hybrid</option>
+                      <option >Sport</option>
                       </select>
                     </li>
                     <li>
@@ -39,18 +49,18 @@ export default function CreateArticleModal ({
                         id="description"
                         className={css.inputFields}
                         name="description"
-                        placeholder="Description..."
+                        placeholder="Article Text Here..."
                       ></textarea>
                     </li>
                     <li>
-                      <label htmlFor="image">Img:</label>
+                      <label htmlFor="img">Image:</label>
                       <input
                         type="text"
                         className={css.inputFields}
-                        id="image"
+                        id="img"
                         placeholder="http://..."
-                        name="image"
-                        value=""
+                        name="img"
+                        
                       />
                     </li>
                     <li id="center-btn">

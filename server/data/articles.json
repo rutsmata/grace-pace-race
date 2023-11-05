@@ -6,6 +6,7 @@
             "description": "Защо Citroen Ami? Безспорно най-атрактивният аспект на Citroen Ami е неговата достъпност. От една страна имаме цената, която у нас започва от 19 900 лв с ДДС. От друга, Ami може да се управлява без шофьорска книжка в много европейски страни, което го прави достъпно за широк кръг от хора, включително тийнейджъри на 14 години, а в България над 16 години с допустима категория.",
             "type": "Electric",
             "author": "Gabriela Stoycheva",
+            "createdAt": "November 1, 2023",
             "img": "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://gracepacerace.com/wp-content/uploads/2023/10/IMG_8542-1140x641.jpg"
           },
     "article_2" :
@@ -15,6 +16,7 @@
             "description": "Бляскавата атмосфера бе изцяло допълнена от plug-in хибридният Touareg R 3.0 V6 eHybrid 4MOTION, притежаващ най-мощната система за задвижване сред всички серийно произвеждани модели на Volkswagen и безспорният пазарен лидер, Touareg R-Line 3.0 V6 TDI SCR 4MOTION.",
             "type": "Hybrid",
             "author": "Gabriela Stoycheva",
+            "createdAt": "November 1, 2023",
             "img": "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://gracepacerace.com/wp-content/uploads/2023/10/Press-VW-05.10.2023-11-1140x641.jpg"
           },
     "article_3" :
@@ -24,6 +26,7 @@
             "description": "Още през 2016 г. с представянето на концепцията Vision Next 100, BMW даде ясна заявка пред света, че в следващите десетилетия ще гони призата за „най-устойчив премиум производител на автомобили“. BMW iX бе сред първите модели, които да загатнат потенциала на компанията, а днес стартираният от него път към бъдещето продължава BMW i7.",
             "type": "Electric",
             "author": "Gabriela Stoycheva",
+            "createdAt": "November 1, 2023",
             "img": "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://gracepacerace.com/wp-content/uploads/2023/08/IMG_3264_jpg-e1692213130392-1140x641.jpg"
           },
     "article_4" :
@@ -33,6 +36,7 @@
             "description": "Volvo обяви, че от 18 септември собствениците на Volvo автомобили ще могат да изтеглят услугата Prime Video от Google Play. Актуализацията ще се случва с постепенно внедряване по “въздух” (OTA), пазар по пазар. Съвсем скоро също така ще бъде налична и платформата YouTube за автомобилите Volvo с вграден Google. И двете приложения ще бъдат налични в автомобили Volvo с вграден Google в цял свят, с изключение на Китай, Южна Корея и Виетнам",
             "type": "Standard",
             "author": "Gabriela Stoycheva",
+            "createdAt": "November 1, 2023",
             "img": "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://gracepacerace.com/wp-content/uploads/2023/09/317400_Stream_more_in_your_Volvo_car_with_Prime_Video_and_YouTube-1140x641.jpg"
           }
     

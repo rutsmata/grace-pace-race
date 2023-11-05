@@ -12,15 +12,15 @@ export default function Register () {
                           <ul className={styles.noBullet}>
                               <li>
                                   <label htmlFor="first-name">First Name:</label>
-                                  <input type="text" className={styles.inputFields} id="first-name" name="firstName" value="" placeholder="Rumen" />
+                                  <input type="text" className={styles.inputFields} id="first-name" name="firstName"  placeholder="Rumen" />
                               </li>
                               <li>
                                   <label htmlFor="last-name">Last Name:</label>
-                                  <input type="text" className={styles.inputFields} id="last-name" name="lastName" value="" placeholder="Nazarov" />
+                                  <input type="text" className={styles.inputFields} id="last-name" name="lastName"  placeholder="Nazarov" />
                               </li>
                               <li>
                                   <label htmlFor="email">Email:</label>
-                                  <input type="text" className={styles.inputFields} id="email" name="email" value="" placeholder="rutsmata@gmail.com" />
+                                  <input type="text" className={styles.inputFields} id="email" name="email"  placeholder="rutsmata@gmail.com" />
                               </li>
                               <li>
                                   <label htmlFor="password">Password:</label>
@@ -31,7 +31,7 @@ export default function Register () {
                                   <input type="password" className={styles.inputFields} id="repeat-password" name="repeatPassword" placeholder="******" />
                               </li>
                               <li id="center-btn">
-                                  <button className={styles['join-btn']}>JOIN</button>
+                                  <button className={styles['join-btn']} type="submit">JOIN</button>
                               </li>
                           </ul>
                       </form>

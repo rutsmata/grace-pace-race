@@ -36,7 +36,7 @@ export default function ArticleElement ({
                 </div>
                 <div className="card-footer p-0 text-center">
                   <a
-                    href="single-post.html"
+                    href="#"
                     className="btn btn-outline-dark btn-sm"
                   >
                     DETAILS

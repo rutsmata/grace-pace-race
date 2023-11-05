@@ -8,7 +8,7 @@ import HomePage from "./components/HomePage"
 import ArticleDetails from "./components/articleDetails"
 import Login from "./components/login"
 import Register from "./components/register"
-import CreateArticle from "./components/CreateArticle"
+import CreateArticleModal from "./components/CreateArticleModal"
 import AppDescription from "./components/AppDescription"
 import Footer from "./components/Footer"
 
@@ -42,7 +42,7 @@ function App() {
 
           {/* <Register/> */}
 
-          {/* <CreateArticle/> */}
+          {/* <CreateArticleModal/> */}
         
 
           {/* <AppDescription/> */}

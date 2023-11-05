@@ -3,12 +3,12 @@ import { useEffect, useState } from "react"
 import * as articleAPI from "../api/articleAPI"
 
 import ArticleElement from "./ArticleElement"
+import CreateArticleModal from "./CreateArticleModal"
 
 
 export default function ArticleList (props) {
-    const [articles, setArticles] = useState([])
-
-    console.log(articles)
+    const [articles, setArticles] = useState([]);
+    const [showCreate, setShowCreate] = useState(false);
 
     useEffect(() => {
         articleAPI.getAll()
@@ -16,9 +16,19 @@ export default function ArticleList (props) {
             .catch(err => console.log(err)) // implement error message
     }, []) 
 
+    const createArticleClickHandler = () => {
+        setShowCreate(true)
+    }
+
+    const hideCreateArticleModal = () => {
+        setShowCreate(false)
+
+    }
+
     return (
 
         <div>
+            {showCreate && <CreateArticleModal hideModal={hideCreateArticleModal}/>}
 
             <h1>Новини</h1>
             <div>
@@ -34,7 +44,10 @@ export default function ArticleList (props) {
                 ))}
 
             </div>
+
+            <button className="btn btn-primary btn-block my-4" onClick={createArticleClickHandler}> Създай новина</button>
             
+
         </div>
     )
 

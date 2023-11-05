@@ -33,7 +33,7 @@ export default function Login () {
                   </li>
 
                   <li id="center-btn">
-                    <button className={styles['login-btn']}>Login</button>
+                    <button className={styles['login-btn']} type="submit">Login</button>
                   </li>
                 </ul>
               </form>

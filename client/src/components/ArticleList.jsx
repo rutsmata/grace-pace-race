@@ -1,6 +1,4 @@
-import Article from "./Article"
-import SubArticleLine1 from "./SubArticlesLine1"
-import SubArticleLine2 from "./SubArticlesLine2"
+import ArticleElement from "./ArticleElement"
 
 import { useEffect, useState } from "react"
 
@@ -20,20 +18,7 @@ export default function ArticleList (props) {
     return (
 
         <div>
-            {/* <h1>Server data Article</h1>
-            <div>
-                {articles.map(article => (
-                    <Article
-                        key={article._id}
-                        title={article.title}
-                        description={article.description}
-                        type={article.type}
-                        author={article.author}
-                        img={article.img}
-                    />
-                    
-                ))}
-            </div> */}
+
 
             {/* <h1>Server data Line 1</h1>
             <div>
@@ -50,10 +35,10 @@ export default function ArticleList (props) {
                 ))}
             </div> */}
 
-            <h1>Server data Line 2</h1>
+            <h1>Server data</h1>
             <div>
                 {articles.map(article => (
-                    <SubArticleLine2
+                    <ArticleElement
                         key={article._id}
                         title={article.title}
                         description={article.description}

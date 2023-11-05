@@ -1,4 +1,4 @@
-export default function SubArticleLine2 ({
+export default function ArticleElement ({
   key, 
   title, 
   description, 

@@ -1,13 +1,8 @@
 import Header from "./components/Header"
-import Footer from "./components/Footer"
 import MainPhoto from "./components/MainPhoto"
-import InstagramWrapper from "./components/InstagramWrapper"
-import MainArticle from "./components/MainArticle"
 import NavBar from "./components/NavBar"
-import Sidebar from "./components/Sidebar"
-import SubArticlesLine1 from "./components/SubArticlesLine1"
 import LoadMorePostsButton from "./components/LoadMorePostsButton"
-import SubArticlesLine2 from "./components/SubArticlesLine2"
+import ArticleElement from "./components/ArticleElement"
 import ArticleList from "./components/ArticleList"
 import Timer from "./components/Timer"
 import TestDriveForm from "./components/TestDriveForm"
@@ -37,21 +32,13 @@ function App() {
     {/* <TestDriveForm/> */}
 
     <div className="container">
-      {/* <section> */}
         <ArticleList />
-        {/* <Timer startTime={100}/> */}
-      {/* </section> */}
-      {/* <hr /> */}
       <div className="page-container">
         <div className="page-content">
-        {/* <MainArticle/> */}
-          {/* <hr /> */}
          
-          {/* <SubArticlesLine1/> */}
          
-          <SubArticlesLine2/>
+          <ArticleElement/>
          
-          {/* <SubArticlesLine3/> */}
 
           <ArticleDetails/>
 
@@ -66,16 +53,13 @@ function App() {
           <AppDescription/>
 
         </div>
-        {/* <Sidebar/> */}
         </div>
       </div>
 
 
     <LoadMorePostsButton/>
 
-    {/* <InstagramWrapper/> */}
 
-    {/* <Footer/> */}
   
     </div>
   )

@@ -1,7 +1,7 @@
 export default function HomePage () {
   return (
 
-<div class="container">
+<div className="container">
 
 <section>
     <div className="feature-posts">

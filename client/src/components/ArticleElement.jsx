@@ -1,5 +1,4 @@
 export default function ArticleElement ({
-  key, 
   title, 
   description, 
   type, 
@@ -16,7 +15,7 @@ export default function ArticleElement ({
               <div className="card text-center mb-5">
                 <div className="card-header p-0">
                   <div className="blog-media">
-                    <img src={img} alt="" className="w-100" />
+                    <img src={img} alt={`${author}'s Article`} className="w-100" />
                     <a href="#" className="badge badge-primary">
                       {author}
                     </a>

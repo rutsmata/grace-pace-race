@@ -13,7 +13,7 @@ export default function CreateArticle () {
 
       <form method="post" className={styles.createForm}>
         <h2>Create Article</h2>
-        <ul class={css.noBullet}>
+        <ul className={css.noBullet}>
           <li>
             <label htmlFor="title">Title:</label>
             <input

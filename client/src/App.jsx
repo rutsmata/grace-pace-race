@@ -1,5 +1,4 @@
 import Header from "./components/Header"
-import MainPhoto from "./components/MainPhoto"
 import NavBar from "./components/NavBar"
 import LoadMorePostsButton from "./components/LoadMorePostsButton"
 import ArticleElement from "./components/ArticleElement"
@@ -18,41 +17,39 @@ import Footer from "./components/Footer"
 function App() {
 
 
-
   return (
-  <div>
+  <div >
     <Header/>
 
     <NavBar/>
 
-    <MainPhoto/>
 
-    {/* <HomePage/>
+    <HomePage/>
 
 
     <div className="container">
         <ArticleList />
-      <div className="page-container">
-        <div className="page-content">
+      {/* <div className="page-container"> */}
+        {/* <div className="page-content"> */}
          
          
-          <ArticleElement/>
+          {/* <ArticleElement/> */}
          
 
-          <ArticleDetails/>
+          {/* <ArticleDetails/> */}
 
-          <Login/>
+          {/* <Login/> */}
 
-          <Register/>
+          {/* <Register/> */}
 
-          <CreateArticle/>
+          {/* <CreateArticle/> */}
         
 
-          <AppDescription/>
+          {/* <AppDescription/> */}
 
         </div>
-        </div>
-      </div> */}
+        {/* </div> */}
+      {/* </div> */}
 
 
     <LoadMorePostsButton/>

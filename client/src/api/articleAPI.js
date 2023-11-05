@@ -9,8 +9,14 @@ export const getAll = async () => {
 
     return data;
 
-
 };
+
+export const getOne = async (articleId) => {
+    const response = await fetch (`${baseUrl}/${articleId}`);
+    const articleDetails = await response.json();
+
+    return articleDetails;
+}
 
 export const create = async (data) => {
     const body = {

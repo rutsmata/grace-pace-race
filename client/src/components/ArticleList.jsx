@@ -4,11 +4,14 @@ import * as articleAPI from "../api/articleAPI"
 
 import ArticleElement from "./ArticleElement"
 import CreateArticleModal from "./CreateArticleModal"
+import ArticleDetailsModal from "./ArticleDetailsModal"
 
 
 export default function ArticleList (props) {
     const [articles, setArticles] = useState([]);
     const [showCreate, setShowCreate] = useState(false);
+    const [showDetails, setShowDetails] = useState(false);
+    const [selectedArticle, setSelectedArticle] = useState(null);
 
     useEffect(() => {
         articleAPI.getAll()
@@ -29,9 +32,18 @@ export default function ArticleList (props) {
         e.preventDefault();
         
         const data = Object.fromEntries(new FormData(e.currentTarget));
-        const result = await articleAPI.create(data)
+        const newArticle = await articleAPI.create(data);
+
+        setArticles(state => [...state, newArticle]) 
         
         setShowCreate(false);
+    }
+
+    const articleDetailsClickHandler = async (articleId) => {
+        // const articleDetails = await articleAPI.getOne(articleId);
+        setSelectedArticle(articleId);
+        setShowDetails(true);
+
     }
 
     return (
@@ -43,12 +55,16 @@ export default function ArticleList (props) {
                 {articles.map(article => (
                     <ArticleElement
                     key={article._id}
+                    articleId={article._id}
                     title={article.title}
                     description={article.description}
                     type={article.type}
                     author={article.author}
                     createdAt={article.createdAt}
                     img={article.img}
+                    comments={article.comments}
+                    onDetailsClick={articleDetailsClickHandler}
+
                     />     
                     ))}
 
@@ -58,10 +74,17 @@ export default function ArticleList (props) {
             
             {showCreate && (
                 <CreateArticleModal 
-                    hideModal={hideCreateArticleModal}
-                    onArticleCreate={ArticleCreateHandler}
+                    onClose={hideCreateArticleModal}
+                    onCreate={ArticleCreateHandler}
                 />
             )}
+
+            {showDetails && (
+                <ArticleDetailsModal 
+                    onClose={() => setShowDetails(false)} 
+                    articleId={selectedArticle}
+                    />
+                    )}
 
         </div>
     )

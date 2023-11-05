@@ -2,15 +2,15 @@ import styles from './CreateArticleModal.module.css'
 import css from './Login.module.css'
 
 export default function CreateArticleModal ({
-  hideModal,
-  onArticleCreate,
+  onClose,
+  onCreate,
 }) {
     return (
         <div>
               
               <div className={styles.createSection}>
 
-                <form onSubmit={onArticleCreate} method="post" className={styles.createForm}>
+                <form onSubmit={onCreate} method="post" className={styles.createForm}>
                   <h2>Create Article</h2>
                   <ul className={css.noBullet}>
                   <li>
@@ -65,7 +65,7 @@ export default function CreateArticleModal ({
                     </li>
                     <li id="center-btn">
                       <button className={styles['create-btn']} type="submit">Create</button>
-                      <button className={styles['create-btn']} type="button" onClick={hideModal}>Cancel</button>
+                      <button className={styles['create-btn']} type="button" onClick={onClose}>Cancel</button>
 
                     </li>
                   </ul>

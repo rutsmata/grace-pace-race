@@ -1,12 +1,36 @@
-import styles from './ArticleDetails.module.css'
+import { useState, useEffect } from 'react'
 
-export default function ArticleDetails () {
+import * as articleAPI from '../api/articleAPI'
+
+import styles from './ArticleDetailsModal.module.css'
+
+export default function ArticleDetailsModal ({
+  articleId,
+  onClose,
+  title, 
+  description, 
+  type, 
+  author,
+  createdAt, 
+  img,
+  comments,
+  onDetailsClick,
+
+}) {
+
+  const [articleDetails, setArticleDetails] = useState({})
+
+  // use try / catch
+  useEffect(()  => {
+      articleAPI.getOne(articleId)
+        .then(result => setArticleDetails(result))
+  }, [articleId]);
 
   return (
     <div>
             <header className="page-header page-header-mini">
           <h1 className="title">
-            Citroen Ami променя играта в микромобилността | Тест1
+            {articleDetails.title}
           </h1>
           
         </header>
@@ -18,29 +42,24 @@ export default function ArticleDetails () {
           <div className="card-header pt-0">
 
             <div className="blog-media mb-4">
-              <img src="public/imgs/blog-6.jpg" alt="" className="w-100" />
-              <a href="#" className="badge badge-primary">#Salupt</a>
+              <img src={articleDetails.img} alt="" className="w-100" />
+              <a href="#" className="badge badge-primary">{articleDetails.author}</a>
             </div>
             <small className="small text-muted">
-              <a href="#" className="text-muted">32 Comments</a>
+              <a href="#" className="text-muted">Comments {articleDetails.comments?.length} </a>
             </small>
           </div>
           <div className="card-body border-top">
-            <p className="my-3">Защо Citroen Ami?</p>
+            <p className="my-3">{articleDetails.title}</p>
 
             <p>
-              Безспорно най-атрактивният аспект на Citroen Ami е неговата
-              достъпност. От една страна имаме цената, която у нас започва от
-              19 900 лв с ДДС. От друга, Ami може да се управлява без
-              шофьорска книжка в много европейски страни, което го прави
-              достъпно за широк кръг от хора, включително тийнейджъри на 14
-              години, а в България над 16 години с допустима категория.
+              {articleDetails.description}
             </p>
           </div>
 
           <div className="card-footer">
             <h6 className="mt-5 mb-3 text-center">
-              <a href="#" className="text-dark">Comments 4</a>
+              <a href="#" className="text-dark">Comments {articleDetails.comments?.length}</a>
             </h6>
             <hr />
             <div className="media">
@@ -52,8 +71,7 @@ export default function ArticleDetails () {
               <div className="media-body">
                 <h6 className="mt-0">Janice Wilder</h6>
                 <p>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                  scelerisque ante sollicitudin.
+                    {articleDetails.comments?.join('-')}
                 </p>
                 <a href="#" className="text-dark small font-weight-bold"
                   ><i className="ti-back-right"></i> Replay</a
@@ -136,6 +154,8 @@ export default function ArticleDetails () {
                 <div className="form-group col-18">
                 <a href="/posts/{{post._id}}/edit" className={styles['edit-btn']}>Edit</a>
                 <a href="/posts/{{post._id}}/delete" className={styles['del-btn']}>Delete</a>
+                <a href="#" className={styles['del-btn']} onClick={onClose}>Back</a>
+
                 
                   <button className="btn btn-primary btn-block">
                     Post Comment

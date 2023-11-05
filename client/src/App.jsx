@@ -5,7 +5,7 @@ import ArticleElement from "./components/ArticleElement"
 import ArticleList from "./components/ArticleList"
 import Timer from "./components/Timer"
 import HomePage from "./components/HomePage"
-import ArticleDetails from "./components/articleDetails"
+import ArticleDetailsModal from "./components/ArticleDetailsModal"
 import Login from "./components/login"
 import Register from "./components/register"
 import CreateArticleModal from "./components/CreateArticleModal"
@@ -36,7 +36,7 @@ function App() {
           {/* <ArticleElement/> */}
          
 
-          {/* <ArticleDetails/> */}
+          {/* <ArticleDetailsModal/> */}
 
           {/* <Login/> */}
 

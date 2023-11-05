@@ -1,13 +1,20 @@
 import { formatDate } from "../utils/dataUtils"
 
 export default function ArticleElement ({
+  articleId,
   title, 
   description, 
   type, 
   author,
   createdAt, 
-  img 
+  img,
+  comments,
+  onDetailsClick,
 } ) {
+
+  const detailsClickHandler = () => {
+      onDetailsClick(articleId)
+  }
 
     return (
 
@@ -32,7 +39,7 @@ export default function ArticleElement ({
                     </a>
                     <span className="px-2">-</span>
                     <a href="#" className="text-muted">
-                      93 Comments
+                    Comments {comments?.length} 
                     </a>
                   </small>
                   <p className="my-2">
@@ -40,12 +47,7 @@ export default function ArticleElement ({
                   </p>
                 </div>
                 <div className="card-footer p-0 text-center">
-                  <a
-                    href="#"
-                    className="btn btn-outline-dark btn-sm"
-                  >
-                    DETAILS
-                  </a>
+                  <button className="btn btn-outline-dark btn-sm" onClick={detailsClickHandler} >DETAILS</button>
                 </div>
               </div>
             </div>

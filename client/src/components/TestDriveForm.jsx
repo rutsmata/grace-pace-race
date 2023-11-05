@@ -1,40 +1,56 @@
+import styles from './TestDriveForm.module.css'
 
 export default function TestDriveForm () {
     return (
      
         <div>
-                <h1 className="">Book For A Service</h1>
-                        {/* <form>
-                            <div className="">
-                                <div className="">
-                                    <input type="text" className="" placeholder="Your Name" style="height: 55px;"/>
-                                </div>
-                                <div className="">
-                                    <input type="email" className="" placeholder="Your Email" style="height: 55px;"/>
-                                </div>
-                                <div className="">
-                                    <select className="" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 2</option>
-                                        <option value="3">Service 3</option>
-                                    </select>
-                                </div>
-                                <div className="">
-                                    <div className="" id="date1" data-target-input="nearest">
-                                        <input type="text"
-                                            className=""
-                                            placeholder="Service Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;"/>
-                                    </div>
-                                </div>
-                                <div className="">
-                                    <textarea className="" placeholder="Special Request"></textarea>
-                                </div>
-                                <div className="">
-                                </div>
-                                </div>
-                            </form> */}
-                            <button className="" type="submit">Book Now</button>
+            <h2>Test Drive Form</h2>
+            {/* <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
+
+            <div className={styles.container}>
+            <form action="/action_page.php">
+            <div className={styles.row}>
+                <div className={styles["col-25"]}>
+                <label htmlFor="fname">First Name</label>
+                </div>
+                <div className={styles["col-75"]}>
+                <input type="text" id="fname" name="firstname" placeholder="Your name.."/>
+                </div>
+            </div>
+            <div className={styles.row}>
+                <div className={styles["col-25"]}>
+                <label htmlFor="lname">Last Name</label>
+                </div>
+                <div className={styles["col-75"]}>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name.."/>
+                </div>
+            </div>
+            <div className={styles.row}>
+                <div className={styles["col-25"]}>
+                <label htmlFor="country">Type</label>
+                </div>
+                <div className={styles["col-75"]}>
+                <select id="type" name="type">
+                    <option value="electric">Electric</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="standard">Standard</option>
+                </select>
+                </div>
+            </div>
+            <div className={styles.row}>
+                <div className={styles["col-25"]}>
+                <label htmlFor="subject">Subject</label>
+                </div>
+                <div className={styles["col-75"]}>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                </div>
+            </div>
+            <br/>
+            <div className={styles.row}>
+                <input type="submit" value="Submit"/>
+            </div>
+            </form>
+            </div> */}
 
         </div>
     )

@@ -12,15 +12,15 @@ export default function Register () {
                           <ul className={styles.noBullet}>
                               <li>
                                   <label htmlFor="first-name">First Name:</label>
-                                  <input type="text" className={styles.inputFields} id="first-name" name="firstName" value="" placeholder="Alex" />
+                                  <input type="text" className={styles.inputFields} id="first-name" name="firstName" value="" placeholder="Rumen" />
                               </li>
                               <li>
                                   <label htmlFor="last-name">Last Name:</label>
-                                  <input type="text" className={styles.inputFields} id="last-name" name="lastName" value="" placeholder="Petkov" />
+                                  <input type="text" className={styles.inputFields} id="last-name" name="lastName" value="" placeholder="Nazarov" />
                               </li>
                               <li>
                                   <label htmlFor="email">Email:</label>
-                                  <input type="text" className={styles.inputFields} id="email" name="email" value="" placeholder="alex@gmail.com" />
+                                  <input type="text" className={styles.inputFields} id="email" name="email" value="" placeholder="rutsmata@gmail.com" />
                               </li>
                               <li>
                                   <label htmlFor="password">Password:</label>

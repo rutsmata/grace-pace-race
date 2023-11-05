@@ -20,7 +20,7 @@ export default function CreateArticle () {
               type="text"
               className={css.inputFields}
               id="name"
-              placeholder="Delphini"
+              placeholder="Title"
               name="name"
               value=""
             />
@@ -29,6 +29,7 @@ export default function CreateArticle () {
           <li>
             <label htmlFor="type">Type:</label>
             <select id="type" name="type" className={css.inputFields}>
+              <option selected>Select</option>
             <option value="electric">Electric</option>
             <option value="hybrid">Hybrid</option>
             <option value="standard">Standard</option>
@@ -40,7 +41,7 @@ export default function CreateArticle () {
               id="description"
               className={css.inputFields}
               name="description"
-              placeholder="Creature..."
+              placeholder="Description..."
             ></textarea>
           </li>
           <li>

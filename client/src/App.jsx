@@ -16,6 +16,7 @@ import ArticleDetails from "./components/articleDetails"
 import Login from "./components/login"
 import Register from "./components/register"
 import CreateArticle from "./components/CreateArticle"
+import AppDescription from "./components/AppDescription"
 
 
 
@@ -61,6 +62,8 @@ function App() {
           <CreateArticle/>
         
           <TestDriveForm/>
+
+          <AppDescription/>
 
         </div>
         {/* <Sidebar/> */}

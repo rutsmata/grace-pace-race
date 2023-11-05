@@ -2,7 +2,6 @@ export default function NavBar () {
     return (
         <div>
 
-                {/* Page Second Navigation */}
     <nav className="navbar custom-navbar navbar-expand-md navbar-light bg-primary sticky-top">
       <div className="container">
         <button
@@ -24,43 +23,19 @@ export default function NavBar () {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="no-sidebar.html">
+              <a className="nav-link" href="index.html">
                 Тест драйв
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="single-post.html">
+              <a className="nav-link" href="index.html">
                 Създай новина
               </a>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Профил
-              </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">
-                  Създай новина
-                </a>
-                <a className="dropdown-item" href="#">
-                  Запиши тест драйв
-                </a>
-                <div className="dropdown-divider" />
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </div>
-            </li>
+
             <li className="nav-item">
-              <a className="nav-link disabled" href="#">
-                Електрически
+              <a className="nav-link" href="index.html">
+                Електрически автомобили
               </a>
             </li>
             <li className="nav-item">
@@ -76,7 +51,7 @@ export default function NavBar () {
           </ul>
           <div className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a href="components.html" className="ml-4 btn btn-dark mt-1 btn-sm">
+              <a href="index.html" className="ml-4 btn btn-dark mt-1 btn-sm">
                 Вход
               </a>
             </li>
@@ -84,7 +59,6 @@ export default function NavBar () {
         </div>
       </div>
     </nav>
-    {/* End Of Page Second Navigation */}
         </div>
     )
 }

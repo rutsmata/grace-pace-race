@@ -27,7 +27,7 @@ function App() {
 
     <MainPhoto/>
 
-    <HomePage/>
+    {/* <HomePage/>
 
 
     <div className="container">
@@ -52,7 +52,7 @@ function App() {
 
         </div>
         </div>
-      </div>
+      </div> */}
 
 
     <LoadMorePostsButton/>

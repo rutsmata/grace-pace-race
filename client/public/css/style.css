@@ -11608,8 +11608,8 @@ textarea.form-control {
 
 .page-header {
   position: relative;
-  background: url(../imgs/mercedes-header-photo.webp) no-repeat center top fixed;
-  background-size: contain;
+  background: url(../imgs/mercedes-header-photo.webp);
+  background-size: auto;
   height: 450px;
 }
 

@@ -5,13 +5,13 @@ import LoadMorePostsButton from "./components/LoadMorePostsButton"
 import ArticleElement from "./components/ArticleElement"
 import ArticleList from "./components/ArticleList"
 import Timer from "./components/Timer"
-import TestDriveForm from "./components/TestDriveForm"
 import HomePage from "./components/HomePage"
 import ArticleDetails from "./components/articleDetails"
 import Login from "./components/login"
 import Register from "./components/register"
 import CreateArticle from "./components/CreateArticle"
 import AppDescription from "./components/AppDescription"
+import Footer from "./components/Footer"
 
 
 
@@ -29,7 +29,6 @@ function App() {
 
     <HomePage/>
 
-    {/* <TestDriveForm/> */}
 
     <div className="container">
         <ArticleList />
@@ -48,7 +47,6 @@ function App() {
 
           <CreateArticle/>
         
-          <TestDriveForm/>
 
           <AppDescription/>
 
@@ -58,6 +56,8 @@ function App() {
 
 
     <LoadMorePostsButton/>
+
+    <Footer/>
 
 
   

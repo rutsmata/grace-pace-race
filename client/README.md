@@ -1,3 +1,1 @@
-# React + Vite
-
-This is my first React project. It aims to create an application which will contain articles about car sport. Data are provided from my daughter www.gracepacerace.com.
+This is my first React project. It represents an application-blog which makes possible for the guests to review car sport articles and comments if available. There is information-home page about the blog owner, which is my daughter-Gabriela Stoycheva. Users are be able to create articles and share comments. There is article details page with information about the owner and number of reviews. Users can also subscribe for a test drive, using a relevant registration form. Data are provided from my daughter www.gracepacerace.com.

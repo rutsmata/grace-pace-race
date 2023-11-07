@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import styles from './CreateArticleModal.module.css'
+
 import css from './Login.module.css'
 
 export default function CreateArticleModal ({

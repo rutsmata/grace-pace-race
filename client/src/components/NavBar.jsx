@@ -1,3 +1,4 @@
+// import {Link} from 'react-router-dom'
 export default function NavBar () {
     return (
         <div>
@@ -18,6 +19,7 @@ export default function NavBar () {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav">
             <li className="nav-item">
+              {/* should be <Link to="/articles">Новини</Link> */}
               <a className="nav-link" href="index.html">
                 Новини
               </a>

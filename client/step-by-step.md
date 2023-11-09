@@ -29,3 +29,8 @@ Note: Every Component is pre-rendered should any of its states is changes
 13. <button onClick={onClick}>Remove</button>
 14. <button onClick={() => setCount(c => c + 1)}>Remove</button>
 15. useEffect: useEffect (() => {someFunction}, [dependency array])
+16. Forms
+17. Routing
+npm i react-router-dom
+import Link and replace a href='/' with <Link to='/'>Home</Link>
+

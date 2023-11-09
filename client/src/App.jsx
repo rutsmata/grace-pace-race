@@ -1,3 +1,4 @@
+import {Routes, Route} from 'react-router-dom'
 import Header from "./components/Header"
 import NavBar from "./components/NavBar"
 import LoadMorePostsButton from "./components/LoadMorePostsButton"
@@ -18,47 +19,54 @@ function App() {
 
 
   return (
-  <div >
-    <Header/>
+      < >
+          <Header/>
 
-    <NavBar/>
+          <NavBar/>
 
+          <Routes>
 
-    <HomePage/>
+              <Route path='/' element ={<HomePage/>}/>
+              <Route path='/about' element ={<AppDescription/>}/>
+              <Route path ="/articles" element={<ArticleList />}/>
 
+          </Routes>
 
-    <div className="container">
-        <ArticleList />
-      {/* <div className="page-container"> */}
-        {/* <div className="page-content"> */}
-         
-         
-          {/* <ArticleElement/> */}
-         
-
-          {/* <ArticleDetailsModal/> */}
-
-          {/* <Login/> */}
-
-          {/* <Register/> */}
-
-          {/* <CreateArticleModal/> */}
-        
-
-          {/* <AppDescription/> */}
-
-        </div>
-        {/* </div> */}
-      {/* </div> */}
+          {/* should move up to Routes in order to be seen once??? */}
+          <div className="container">
+          
 
 
-    <LoadMorePostsButton/>
+            {/* <div className="page-container"> */}
+              {/* <div className="page-content"> */}
+              
+              
+                {/* <ArticleElement/> */}
+              
 
-    <Footer/>
+                {/* <Route path="/articles/:id" element ={<ArticleDetailsModal/>} /> */}
+
+                {/* <Login/> */}
+
+                {/* <Register/> */}
+
+                {/* <CreateArticleModal/> */}
+              
+
+                {/* <AppDescription/> */}
+
+              {/* </div> */}
+              </div>
+            {/* </div> */}
 
 
-  
-    </div>
+          <LoadMorePostsButton/>
+
+          <Footer/>
+
+
+      
+        </>
   )
 }
 

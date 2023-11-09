@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import * as articleAPI from '../api/articleAPI'
 
@@ -43,10 +44,10 @@ export default function ArticleDetailsModal ({
 
             <div className="blog-media mb-4">
               <img src={articleDetails.img} alt="" className="w-100" />
-              <a href="#" className="badge badge-primary">{articleDetails.author}</a>
+              <Link to="#" className="badge badge-primary">{articleDetails.author}</Link>
             </div>
             <small className="small text-muted">
-              <a href="#" className="text-muted">Comments {articleDetails.comments?.length} </a>
+              <Link to="#" className="text-muted">Comments {articleDetails.comments?.length} </Link>
             </small>
           </div>
           <div className="card-body border-top">
@@ -59,7 +60,7 @@ export default function ArticleDetailsModal ({
 
           <div className="card-footer">
             <h6 className="mt-5 mb-3 text-center">
-              <a href="#" className="text-dark">Comments {articleDetails.comments?.length}</a>
+              <Link to="#" className="text-dark">Comments {articleDetails.comments?.length}</Link>
             </h6>
             <hr />
             <div className="media">
@@ -73,26 +74,24 @@ export default function ArticleDetailsModal ({
                 <p>
                     {articleDetails.comments?.join('-')}
                 </p>
-                <a href="#" className="text-dark small font-weight-bold"
-                  ><i className="ti-back-right"></i> Replay</a
-                >
+                <Link to="#" className="text-dark small font-weight-bold"
+                  ><i className="ti-back-right"></i> Replay</Link>
                 <div className="media mt-5">
-                  <a className="mr-3" href="#">
+                  <Link to="#" className="mr-3">
                     <img
                       src="public/imgs/avatar.jpg"
                       className="thumb-sm rounded-circle"
                       alt="..."
                     />
-                  </a>
+                  </Link>
                   <div className="media-body align-items-center">
                     <h6 className="mt-0">Joe Mitchell</h6>
                     <p>
                       Fusce condimentum nunc ac nisi vulputate fringilla.
                       Donec lacinia congue felis in faucibus
                     </p>
-                    <a href="#" className="text-dark small font-weight-bold"
-                      ><i className="ti-back-right"></i> Replay</a
-                    >
+                    <Link to="#" className="text-dark small font-weight-bold"
+                      ><i className="ti-back-right"></i> Replay</Link>
                   </div>
                 </div>
               </div>
@@ -109,9 +108,8 @@ export default function ArticleDetailsModal ({
                   Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
                   scelerisque ante sollicitudin.
                 </p>
-                <a href="#" className="text-dark small font-weight-bold"
-                  ><i className="ti-back-right"></i> Replay</a
-                >
+                <Link to="#" className="text-dark small font-weight-bold"
+                  ><i className="ti-back-right"></i> Replay</Link>
               </div>
             </div>
             <div className="media mt-4">
@@ -126,14 +124,13 @@ export default function ArticleDetailsModal ({
                   Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
                   scelerisque ante sollicitudin.
                 </p>
-                <a href="#" className="text-dark small font-weight-bold"
-                  ><i className="ti-back-right"></i> Replay</a
-                >
+                <Link to="#" className="text-dark small font-weight-bold"
+                  ><i className="ti-back-right"></i> Replay</Link>
               </div>
             </div>
 
             <h6 className="mt-5 mb-3 text-center">
-              <a href="#" className="text-dark">Write Your Comment</a>
+              <Link to="#" className="text-dark">Write Your Comment</Link>
             </h6>
             <hr />
             <form>
@@ -152,9 +149,9 @@ export default function ArticleDetailsModal ({
                 
                 
                 <div className="form-group col-18">
-                <a href="/posts/{{post._id}}/edit" className={styles['edit-btn']}>Edit</a>
-                <a href="/posts/{{post._id}}/delete" className={styles['del-btn']}>Delete</a>
-                <a href="#" className={styles['del-btn']} onClick={onClose}>Back</a>
+                <Link to="/posts/{{post._id}}/edit" className={styles['edit-btn']}>Edit</Link>
+                <Link to="/posts/{{post._id}}/delete" className={styles['del-btn']}>Delete</Link>
+                <Link to="#" className={styles['del-btn']} onClick={onClose}>Back</Link>
 
                 
                   <button className="btn btn-primary btn-block">

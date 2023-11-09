@@ -12,6 +12,7 @@ import Register from "./components/register"
 import CreateArticleModal from "./components/CreateArticleModal"
 import AppDescription from "./components/AppDescription"
 import Footer from "./components/Footer"
+import TestDriveForm from "./components/TestDriveForm"
 
 
 
@@ -27,13 +28,20 @@ function App() {
           <Routes>
 
               <Route path='/' element ={<HomePage/>}/>
-              <Route path='/about' element ={<AppDescription/>}/>
+              <Route path='/register' element ={<Register/>}/>
+              <Route path='/login' element ={<Login/>}/>
+              <Route path='/create' element ={<CreateArticleModal/>}/>
+              <Route path='/test-drive' element ={<TestDriveForm/>}/>
               <Route path ="/articles" element={<ArticleList />}/>
+              <Route path='/about' element ={<AppDescription/>}/>
+
+
+
 
           </Routes>
 
           {/* should move up to Routes in order to be seen once??? */}
-          <div className="container">
+          {/* <div className="container"> */}
           
 
 
@@ -46,17 +54,14 @@ function App() {
 
                 {/* <Route path="/articles/:id" element ={<ArticleDetailsModal/>} /> */}
 
-                {/* <Login/> */}
 
-                {/* <Register/> */}
 
-                {/* <CreateArticleModal/> */}
               
 
                 {/* <AppDescription/> */}
 
               {/* </div> */}
-              </div>
+              {/* </div> */}
             {/* </div> */}
 
 

@@ -1,18 +1,19 @@
+import { Link } from "react-router-dom"
 export default function Header () {
   return (
     <div>
           <nav className="navbar navbar-light bg-light">
           <div className="container">
-            <a className="navbar-brand" href="https://www.gracepacerace.com/" target="_blank">
+            <Link to="https://www.gracepacerace.com/" target="_blank" className="navbar-brand" >
               <img src="public/imgs/gracepacerace-logo.jpg" alt="" />
-            </a>
+            </Link>
             <div className="socials">
-              <a href="https://www.facebook.com/gracepacerace/" target="_blank">
+              <Link to="https://www.facebook.com/gracepacerace/" target="_blank">
                 <i className="ti-facebook pr-1" />
-              </a>
-              <a href="https://www.instagram.com/gracepacerace/" target="_blank"> 
+              </Link>
+              <Link to="https://www.instagram.com/gracepacerace/" target="_blank"> 
               <i className="ti-instagram pr-1" /> 6 800
-              </a>
+              </Link>
             </div>
           </div>
         </nav>

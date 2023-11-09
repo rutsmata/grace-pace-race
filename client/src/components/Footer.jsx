@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function Footer () {
     return (
         <div>
@@ -10,19 +12,17 @@ export default function Footer () {
           </div>
           <div className="col-md-9 text-center text-md-right">
             <div className="socials">
-              <a
-                a href="https://www.facebook.com/gracepacerace/" target="_blank"
+              <Link to="https://www.facebook.com/gracepacerace/" target="_blank"
                 className="font-weight-bold text-muted mr-4"
               >
                 <i className="ti-facebook pr-1" />
-              </a>
+              </Link>
 
-              <a
-                href="https://www.instagram.com/gracepacerace/" target="_blank"
+              <Link to="https://www.instagram.com/gracepacerace/" target="_blank"
                 className="font-weight-bold text-muted mr-4"
               >
                 <i className="ti-instagram pr-1" /> 6 800
-              </a>
+              </Link>
 
             </div>
           </div>

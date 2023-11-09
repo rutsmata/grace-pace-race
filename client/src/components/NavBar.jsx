@@ -1,4 +1,4 @@
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 export default function NavBar () {
     return (
         <div>
@@ -19,43 +19,42 @@ export default function NavBar () {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav">
             <li className="nav-item">
-              {/* should be <Link to="/articles">Новини</Link> */}
-              <a className="nav-link" href="index.html">
-                Новини
-              </a>
+              <Link to="/articles" className="nav-link">
+                Articles
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="index.html">
-                Тест драйв
-              </a>
+              <Link to="/test-drive" className="nav-link">
+                Test drive
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="index.html">
-                Създай новина
-              </a>
+              <Link to="/create" className="nav-link">
+                Create article
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="index.html">
-                Електрически автомобили
-              </a>
+              <Link to="index.html" className="nav-link" >
+                Electric vehicles
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="index.html">
-                Регистрация
-              </a>
+              <Link to="/register" className="nav-link">
+                Register
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="index.html">
-                Заглавна страница
-              </a>
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
             </li>
           </ul>
           <div className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a href="index.html" className="ml-4 btn btn-dark mt-1 btn-sm">
-                Вход
-              </a>
+              <Link to="/login" className="ml-4 btn btn-dark mt-1 btn-sm">
+                Login
+              </Link>
             </li>
           </div>
         </div>

@@ -5,7 +5,7 @@ export default function TestDriveForm () {
      
         <div>
             <h2>Test Drive Form</h2>
-            {/* <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
+            <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
 
             <div className={styles.container}>
             <form action="/action_page.php">
@@ -42,7 +42,8 @@ export default function TestDriveForm () {
                 <label htmlFor="subject">Subject</label>
                 </div>
                 <div className={styles["col-75"]}>
-                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                {/* <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea> */}
+                <textarea id="subject" name="subject" placeholder="Write something.." ></textarea>
                 </div>
             </div>
             <br/>
@@ -50,7 +51,7 @@ export default function TestDriveForm () {
                 <input type="submit" value="Submit"/>
             </div>
             </form>
-            </div> */}
+            </div>
 
         </div>
     )

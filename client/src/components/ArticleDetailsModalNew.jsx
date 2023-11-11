@@ -1,18 +1,34 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
-export default function ArticleDetailsModalNew () {
+import { Link } from "react-router-dom";
+import styles from './ArticleDetailsModal.module.css'
+
+
+export default function ArticleDetailsModalNew (
+    title,
+) {
     const {articleId} = useParams();
+    const navigate = useNavigate();
     const [articleDetails, setArticleDetails] = useState({});
 
     useEffect(() => {
         fetch(`http://localhost:3030/jsonstore/articlesNew/${articleId}`)
-            .then(res => res.json())
+            .then(res => {
+                    if (!res.ok) {
+                        throw new Error("Article Not Found")
+                    }
+                    return res.json()
+                })
+            
             .then(setArticleDetails)
+            .catch((err) => {
+                navigate('/404')
+            })
     }, [articleId])
 
     return (
-        <>
+        <div>
 
             <header className="page-header page-header-mini">
                 <h1 className="title">
@@ -136,7 +152,7 @@ export default function ArticleDetailsModalNew () {
                                 <div className="form-group col-18">
                                 <Link to="/posts/{{post._id}}/edit" className={styles['edit-btn']}>Edit</Link>
                                 <Link to="/posts/{{post._id}}/delete" className={styles['del-btn']}>Delete</Link>
-                                <Link to="#" className={styles['del-btn']} onClick={onClose}>Back</Link>
+                                <Link to="#" className={styles['del-btn']}>Back</Link>
 
                                 
                                 <button className="btn btn-primary btn-block">
@@ -151,7 +167,7 @@ export default function ArticleDetailsModalNew () {
                         </div>
             </section>
       
-        </>
+        </div>
 
     )
 }

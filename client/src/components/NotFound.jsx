@@ -5,7 +5,7 @@ export default function NotFound () {
     return (
         <>
         
-        <p className={styles.NotFound}>Not Found</p>
+        <h1 className={styles.NotFound}>Not Found</h1>
         </>
     )
 }

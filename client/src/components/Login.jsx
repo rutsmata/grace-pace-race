@@ -1,6 +1,30 @@
+import { useState } from 'react'
 import styles from './Login.module.css'
 
+const formInitialState = {
+  email: '',
+  password: '',
+}
+
 export default function Login () {
+    const [formValues, setFormValues] = useState(formInitialState);
+
+    const changeHandler = (e) => {
+          setFormValues(state => ({
+              ...state,
+              [e.target.name]: e.target.value,
+          }))
+    }
+
+    const resetFormHandler = () => {
+      setFormValues(formInitialState)
+    }
+
+    const submitHandler = () => {
+      console.log(formValues);
+      resetFormHandler()
+
+    }
 
   return (
 
@@ -18,7 +42,9 @@ export default function Login () {
                       className={styles.inputFields}
                       id="email"
                       name="email"
+                      value={formValues.email}
                       placeholder="alex@gmail.com"
+                      onChange={changeHandler}
                     />
                   </li>
                   <li>
@@ -28,12 +54,14 @@ export default function Login () {
                       className={styles.inputFields}
                       id="password"
                       name="password"
+                      value={formValues.password}
                       placeholder="*******"
+                      onChange={changeHandler}
                     />
                   </li>
 
                   <li id="center-btn">
-                    <button className={styles['login-btn']} type="submit">Login</button>
+                    <button className={styles['login-btn']} type="button" onClick={submitHandler}>Login</button>
                   </li>
                 </ul>
               </form>

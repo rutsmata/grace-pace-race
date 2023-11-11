@@ -16,6 +16,7 @@ import TestDriveForm from "./components/TestDriveForm"
 import NotFound from "./components/NotFound"
 import ArticleListNew from './components/ArticleListNew'
 import ArticleDetailsModalNew from './components/ArticleDetailsModalNew'
+import AboutMore from './components/AboutMore'
 
 
 
@@ -31,21 +32,23 @@ function App() {
 
           <Routes>
 
-              <Route path='/' element ={<HomePage/>}/>
-              <Route path='/register' element ={<Register/>}/>
-              <Route path='/login' element ={<Login/>}/>
-              <Route path='/create' element ={<CreateArticleModal/>}/>
-              <Route path='/test-drive' element ={<TestDriveForm/>}/>
-              <Route path='/about' element ={<About/>}/>
+              <Route path='/' element={<HomePage/>}/>
+              <Route path='/register' element={<Register/>}/>
+              <Route path='/login' element={<Login/>}/>
+              <Route path='/create' element={<CreateArticleModal/>}/>
+              <Route path='/test-drive' element={<TestDriveForm/>}/>
+              <Route path='/about' element={<About/>}/>
+                    <Route path='more' element={<AboutMore/>} />
+              <Route/>
 
               {/* <Route path ="/articles" element={<ArticleList />}/> */}
               <Route path ="/articles" element={<ArticleListNew />}/>
 
               {/* <Route path="/articles/:articleId" element ={<ArticleDetailsModal/>} /> */}
-              <Route path="/articlesNew/:articleId" element ={<ArticleDetailsModalNew/>} />
+              <Route path="/articles/:articleId" element={<ArticleDetailsModalNew/>} />
 
-              <Route path='/details' element ={<ArticleElement/>}/>
-              <Route path='*' element ={<NotFound/>}/>
+              <Route path='/details' element={<ArticleElement/>}/>
+              <Route path='*' element={<NotFound/>}/>
 
           </Routes>
           

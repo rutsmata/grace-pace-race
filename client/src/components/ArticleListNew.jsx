@@ -8,11 +8,17 @@ export default function ArticleListNew () {
     const [articles, SetArticles] = useState([])
 
     useEffect(() => {
-        fetch(`${base_url}/articlesNew`)
+        const abortController = new AbortController();
+
+        fetch(`${base_url}/articlesNew`, {signal: abortController.signal})
             .then(res => res.json())
             .then(data => {
                 SetArticles(data.articles)
-            })
+            });
+
+            return () => {
+                abortController.abort();
+            }
     }, []);
 
 

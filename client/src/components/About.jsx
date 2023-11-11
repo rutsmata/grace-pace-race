@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import styles from './About.module.css'
 
 export default function AppDescription () {
 
     return (
-        <div>
+        <>
 
         <div>
 
@@ -15,12 +15,13 @@ export default function AppDescription () {
 
         </div>
 
-        <div>
-            <button className={styles.btn}>More</button>
-            {/* <button className={styles.btn}>Back</button> */}
+        <nav>
+            <Link to="/more" className={styles.btn}>More info</Link>
 
-        </div>
+        </nav>
 
-        </div>
+        <Outlet/>
+
+        </>
     )
 }

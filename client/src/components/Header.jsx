@@ -12,7 +12,7 @@ export default function Header () {
                 <i className="ti-facebook pr-1" />
               </Link>
               <Link to="https://www.instagram.com/gracepacerace/" target="_blank"> 
-              <i className="ti-instagram pr-1" /> 6 800
+              <i className="ti-instagram pr-1" /> 7 800
               </Link>
             </div>
           </div>

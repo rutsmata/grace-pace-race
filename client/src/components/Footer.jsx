@@ -21,14 +21,14 @@ export default function Footer () {
               <Link to="https://www.instagram.com/gracepacerace/" target="_blank"
                 className="font-weight-bold text-muted mr-4"
               >
-                <i className="ti-instagram pr-1" /> 6 800
+                <i className="ti-instagram pr-1" /> 7 800
               </Link>
 
             </div>
           </div>
         </div>
         <p className="border-top mb-0 mt-4 pt-3 small">
-          © , GRACE PACE RACE Created By{" "}
+          GRACE PACE RACE © 
 
           All rights reserved{" "}
         </p>

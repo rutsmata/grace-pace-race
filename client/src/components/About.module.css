@@ -1,11 +1,10 @@
 .description {
     text-align: left;
-    /* display:inline; */
     margin-left: 10px;
     background-color: rgb(109, 143, 118);
     color: azure;
-    padding: 0px;
-    font-style: unset;
+    padding: 30px;
+    font-style: italic;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: xx-large;
 }

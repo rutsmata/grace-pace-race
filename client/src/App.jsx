@@ -3,16 +3,20 @@ import Header from "./components/Header"
 import NavBar from "./components/NavBar"
 import LoadMorePostsButton from "./components/LoadMorePostsButton"
 import ArticleElement from "./components/ArticleElement"
-import ArticleList from "./components/ArticleList"
+// import ArticleList from "./components/ArticleList"
 import Timer from "./components/Timer"
 import HomePage from "./components/HomePage"
-import ArticleDetailsModal from "./components/ArticleDetailsModal"
+// import ArticleDetailsModal from "./components/ArticleDetailsModal"
 import Login from "./components/login"
 import Register from "./components/register"
 import CreateArticleModal from "./components/CreateArticleModal"
-import AppDescription from "./components/AppDescription"
+import About from "./components/About"
 import Footer from "./components/Footer"
 import TestDriveForm from "./components/TestDriveForm"
+import NotFound from "./components/NotFound"
+import ArticleListNew from './components/ArticleListNew'
+import ArticleDetailsModalNew from './components/ArticleDetailsModalNew'
+
 
 
 
@@ -32,15 +36,20 @@ function App() {
               <Route path='/login' element ={<Login/>}/>
               <Route path='/create' element ={<CreateArticleModal/>}/>
               <Route path='/test-drive' element ={<TestDriveForm/>}/>
-              <Route path ="/articles" element={<ArticleList />}/>
-              <Route path='/about' element ={<AppDescription/>}/>
+              <Route path='/about' element ={<About/>}/>
 
+              {/* <Route path ="/articles" element={<ArticleList />}/> */}
+              <Route path ="/articles" element={<ArticleListNew />}/>
 
+              {/* <Route path="/articles/:articleId" element ={<ArticleDetailsModal/>} /> */}
+              <Route path="/articlesNew/:articleId" element ={<ArticleDetailsModalNew/>} />
 
+              <Route path='/details' element ={<ArticleElement/>}/>
+              <Route path='*' element ={<NotFound/>}/>
 
           </Routes>
+          
 
-          {/* should move up to Routes in order to be seen once??? */}
           {/* <div className="container"> */}
           
 
@@ -52,13 +61,11 @@ function App() {
                 {/* <ArticleElement/> */}
               
 
-                {/* <Route path="/articles/:id" element ={<ArticleDetailsModal/>} /> */}
 
 
 
               
 
-                {/* <AppDescription/> */}
 
               {/* </div> */}
               {/* </div> */}

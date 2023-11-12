@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import styles from './Register.module.css'
 
 const formInitialState = {
@@ -10,6 +12,8 @@ const formInitialState = {
 }
 
 export default function Register () {
+    const navigate = useNavigate();
+
     const [formValues, setFormValues] = useState(formInitialState);
 
     const changeHandler = (e) => {
@@ -26,8 +30,10 @@ export default function Register () {
   const submitHandler = () => {
     console.log(formValues);
     resetFormHandler()
+    navigate('/')
 
   }
+
 
   return (
 
@@ -45,7 +51,7 @@ export default function Register () {
                                   id="first-name" 
                                   name='firstname' 
                                   value={formValues.firstname}
-                                    onChange={changeHandler}
+                                  onChange={changeHandler}
                                   placeholder="Rumen" />
                               </li>
                               <li>
@@ -56,7 +62,7 @@ export default function Register () {
                                   id="last-name" 
                                   name='lastname'  
                                   value={formValues.lastname}
-                                onChange={changeHandler}
+                                  onChange={changeHandler}
                                   placeholder="Nazarov" />
                               </li>
                               <li>

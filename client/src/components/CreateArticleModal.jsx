@@ -1,17 +1,46 @@
-import styles from './CreateArticleModal.module.css'
+import { useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 
+import styles from './CreateArticleModal.module.css'
 import css from './Login.module.css'
 
-export default function CreateArticleModal ({
-  onClose,
-  onCreate,
-}) {
+const formInitialState = {
+    author: '',
+    title: '',
+    description: '',
+    img: '',
+
+}
+
+export default function CreateArticleModal () {
+    const navigate = useNavigate();
+
+    const [formValues, setFormValues] = useState(formInitialState)
+
+    const changeHandler = (e) => {
+      setFormValues(state => ({
+          ...state,
+          [e.target.name]: e.target.value,
+      }))
+    }
+
+    const resetFormHandler = () => {
+      setFormValues(formInitialState)
+    }
+
+    const submitHandler = () => {
+      console.log(formValues);
+      resetFormHandler()
+      navigate('/articles')
+    }
+
+ 
     return (
-        <div>
+        <>
               
               <div className={styles.createSection}>
 
-                <form onSubmit={onCreate} method="post" className={styles.createForm}>
+                <form  method="post" className={styles.createForm}>
                   <h2>Create Article</h2>
                   <ul className={css.noBullet}>
                   <li>
@@ -22,6 +51,8 @@ export default function CreateArticleModal ({
                         id="author"
                         placeholder="First Name & Last Name"
                         name="author"
+                        value={formValues.author}
+                        onChange={changeHandler}
                       />
                     </li>
                     <li>
@@ -32,16 +63,18 @@ export default function CreateArticleModal ({
                         id="title"
                         placeholder="Article Title"
                         name="title"
+                        value={formValues.title}
+                        onChange={changeHandler}
                       />
                     </li>
                     
                     <li>
                       <label htmlFor="type">Type:</label>
                       <select id="type" name="type" className={css.inputFields}>
-                        <option >Select Genre</option>
-                      <option >Electric</option>
-                      <option >Hybrid</option>
-                      <option >Sport</option>
+                        <option onChange={changeHandler} >Select Genre</option>
+                          <option >Electric</option>
+                          <option >Hybrid</option>
+                          <option >Sport</option>
                       </select>
                     </li>
                     <li>
@@ -51,6 +84,8 @@ export default function CreateArticleModal ({
                         className={css.inputFields}
                         name="description"
                         placeholder="Article Text Here..."
+                        value={formValues.description}
+                        onChange={changeHandler}
                       ></textarea>
                     </li>
                     <li>
@@ -61,18 +96,19 @@ export default function CreateArticleModal ({
                         id="img"
                         placeholder="http://..."
                         name="img"
-                        
+                        value={formValues.img}
+                        onChange={changeHandler}
                       />
                     </li>
                     <li id="center-btn">
-                      <button className={styles['create-btn']} type="submit">Create</button>
-                      <button className={styles['create-btn']} type="button" onClick={onClose}>Cancel</button>
+                      <button className={styles['create-btn']} type="button" onClick={submitHandler}>Create</button>
+                      <button className={styles['create-btn']} type="button" onClick={resetFormHandler}>Clear</button>
 
                     </li>
                   </ul>
                 </form>
 
               </div>
-         </div>
+         </>
     )
 }

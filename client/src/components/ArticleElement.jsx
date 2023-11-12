@@ -10,12 +10,8 @@ export default function ArticleElement ({
   createdAt, 
   img,
   comments,
-  onDetailsClick,
 } ) {
 
-  const detailsClickHandler = () => {
-      onDetailsClick(articleId)
-  }
 
     return (
 
@@ -48,8 +44,7 @@ export default function ArticleElement ({
                   </p>
                 </div>
                 <div className="card-footer p-0 text-center">
-                  {/* <button className="btn btn-outline-dark btn-sm" onClick={detailsClickHandler} >DETAILS</button> */}
-                  <Link> <button as={Link} to={`./articles/${articleId}`} className="btn btn-outline-dark btn-sm" >DETAILS </button> </Link>
+                  <Link to={`./${articleId}`} className="btn btn-outline-dark btn-sm" >DETAILS </Link>
 
                 </div>
               </div>

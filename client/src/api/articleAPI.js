@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3030/jsonstore/articles";
+const baseUrl = "http://localhost:3030/jsonstore/articlesNew";
 
 export const getAll = async () => {
 

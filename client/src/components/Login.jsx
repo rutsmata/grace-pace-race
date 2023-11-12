@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import styles from './Login.module.css'
 
 const formInitialState = {
@@ -7,6 +9,7 @@ const formInitialState = {
 }
 
 export default function Login () {
+    const navigate = useNavigate()
     const [formValues, setFormValues] = useState(formInitialState);
 
     const changeHandler = (e) => {
@@ -22,7 +25,8 @@ export default function Login () {
 
     const submitHandler = () => {
       console.log(formValues);
-      resetFormHandler()
+      resetFormHandler();
+      navigate('/')
 
     }
 

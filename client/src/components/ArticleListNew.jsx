@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import ArticleElementNew from "./ArticleElementNew";
+import ArticleElementNew from "./ArticleElement";
 
 const base_url = 'http://localhost:3030/jsonstore'
 

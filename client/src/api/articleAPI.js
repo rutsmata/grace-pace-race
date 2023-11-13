@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3030/jsonstore/articlesNew";
+const baseUrl = "http://localhost:3030/jsonstore/articles";
 
 export const getAll = async () => {
 
@@ -37,7 +37,6 @@ export const create = async (data) => {
     })
 
     const result = await response.json()
-    console.log(result);
 
     return result
 }

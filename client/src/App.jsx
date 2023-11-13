@@ -1,20 +1,20 @@
 import {Routes, Route} from 'react-router-dom'
 
-import Header from "./components/Header"
-import NavBar from "./components/NavBar"
-import ArticleElement from "./components/ArticleElement"
-import ArticleListNew from './components/ArticleListNew'
-import ArticleDetailsModal from './components/ArticleDetailsModal'
-import HomePage from "./components/HomePage"
-import Login from "./components/login"
-import Register from "./components/register"
-import CreateArticleModal from "./components/CreateArticleModal"
-import About from "./components/About"
-import AboutMore from './components/AboutMore'
-import TestDriveForm from "./components/TestDriveForm"
+import Header from "./components/header/Header"
+import NavBar from "./components/navigation/NavBar"
+import ArticleElement from "./components/articles/ArticleElement"
+import ArticleList from './components/articles/ArticleList'
+import ArticleDetails from './components/articles/ArticleDetails'
+import CreateArticle from "./components/articles/CreateArticle"
+import HomePage from "./components/home/HomePage"
+import Login from "./components/login/Login"
+import Register from "./components/register/Register"
+import About from "./components/about/About"
+import AboutMore from './components/about/AboutMore'
+import TestDriveForm from "./components/test-drive/TestDriveForm"
 import LoadMorePostsButton from "./components/LoadMorePostsButton"
-import NotFound from "./components/NotFound"
-import Footer from "./components/Footer"
+import NotFound from "./components/not-found/NotFound"
+import Footer from "./components/footer/Footer"
 import Timer from "./components/Timer"
 
 
@@ -31,13 +31,13 @@ function App() {
               <Route path='/' element={<HomePage/>}/>
               <Route path='/register' element={<Register/>}/>
               <Route path='/login' element={<Login/>}/>
-              <Route path='/create' element={<CreateArticleModal/>}/>
+              <Route path='/create' element={<CreateArticle/>}/>
               <Route path='/test-drive' element={<TestDriveForm/>}/>
               <Route path='/about' element={<About/>}/>
                     <Route path='more' element={<AboutMore/>} />
               <Route/>
-              <Route path ="/articles" element={<ArticleListNew />}/>
-              <Route path="/articles/:articleId" element={<ArticleDetailsModal/>} />
+              <Route path ="/articles" element={<ArticleList />}/>
+              <Route path="/articles/:articleId" element={<ArticleDetails/>} />
               <Route path='/details' element={<ArticleElement/>}/>
               <Route path='*' element={<NotFound/>}/>
 

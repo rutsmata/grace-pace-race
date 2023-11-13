@@ -39,11 +39,7 @@ export default function NavBar () {
                 Electric vehicles
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/register" className="nav-link">
-                Register
-              </Link>
-            </li>
+
             <li className="nav-item">
               <Link to="/" className="nav-link">
                 Home
@@ -54,6 +50,16 @@ export default function NavBar () {
             <li className="nav-item">
               <Link to="/login" className="ml-4 btn btn-dark mt-1 btn-sm">
                 Login
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/logout" className="ml-4 btn btn-dark mt-1 btn-sm">
+                Logout
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/register" className="ml-4 btn btn-dark mt-1 btn-sm">
+                Register
               </Link>
             </li>
           </div>

@@ -1,8 +1,10 @@
 import { useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import styles from './CreateArticleModal.module.css'
-import css from './Login.module.css'
+import * as articleAPI from '../../api/articleAPI'
+
+import styles from './CreateArticle.module.css'
+import css from '../login/Login.module.css'
 
 const formInitialState = {
     author: '',
@@ -13,10 +15,11 @@ const formInitialState = {
 
 }
 
-export default function CreateArticleModal () {
+export default function CreateArticle () {
     const navigate = useNavigate();
 
     const [formValues, setFormValues] = useState(formInitialState)
+
 
     const changeHandler = (e) => {
       setFormValues(state => ({
@@ -29,8 +32,16 @@ export default function CreateArticleModal () {
       setFormValues(formInitialState)
     }
 
-    const submitHandler = () => {
-      console.log(formValues);
+    const submitHandler = async (e) => {
+      e.preventDefault();
+
+      try {
+        await articleAPI.create(formValues)
+
+      } catch (error) {
+        console.log((err));
+        
+      }
       resetFormHandler()
       navigate('/articles')
     }

@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import { Link } from "react-router-dom";
-import styles from './ArticleDetailsModal.module.css'
+import styles from './ArticleDetails.module.css'
 
 
-export default function ArticleDetailsModal (
+export default function ArticleDetails (
     title,
 ) {
     const {articleId} = useParams();
@@ -13,7 +13,7 @@ export default function ArticleDetailsModal (
     const [articleDetails, setArticleDetails] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/articlesNew/${articleId}`)
+        fetch(`http://localhost:3030/jsonstore/articles/${articleId}`)
             .then(res => {
                     if (!res.ok) {
                         throw new Error("Article Not Found")

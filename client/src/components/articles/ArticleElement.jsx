@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { formatDate } from "../utils/dataUtils"
+import { formatDate } from "../../utils/dataUtils"
 
 export default function ArticleElement ({
   articleId,
@@ -15,7 +15,7 @@ export default function ArticleElement ({
 
     return (
 
-        <div>
+        
 
         <div>
             <div className="col-lg-10">
@@ -51,6 +51,6 @@ export default function ArticleElement ({
             </div>
             
           </div>
-        </div>
+        
     )
 }

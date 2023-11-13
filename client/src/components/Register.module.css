@@ -62,3 +62,11 @@
     background: rgba(20, 20, 20, .8);
     padding: 10px 80px;
 }
+
+.errorMessage {
+    color: red;
+}
+
+.inputError {
+    border: 1px solid red;
+}

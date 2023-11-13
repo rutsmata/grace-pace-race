@@ -9,6 +9,7 @@ const formInitialState = {
     title: '',
     description: '',
     img: '',
+    type: ''
 
 }
 
@@ -70,11 +71,17 @@ export default function CreateArticleModal () {
                     
                     <li>
                       <label htmlFor="type">Type:</label>
-                      <select id="type" name="type" className={css.inputFields}>
-                        <option onChange={changeHandler} >Select Genre</option>
-                          <option >Electric</option>
-                          <option >Hybrid</option>
-                          <option >Sport</option>
+                      <select 
+                          id="type" 
+                          name="type" 
+                          className={css.inputFields} 
+                          onChange={changeHandler} 
+                          value={formValues.type}
+                      >
+                              <option  >Select Genre</option>
+                                <option value='electric' >Electric</option>
+                                <option value='hybrid'>Hybrid</option>
+                                <option value='sport'>Sport</option>
                       </select>
                     </li>
                     <li>

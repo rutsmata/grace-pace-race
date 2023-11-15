@@ -7,39 +7,42 @@ import CreateArticle from "./CreateArticle"
 import ArticleDetails from "./ArticleDetails"
 
 
-export default function ArticleList (props) {
+export default function ArticleList () {
     const [articles, setArticles] = useState([]);
-    const [showCreate, setShowCreate] = useState(false);
-    const [showDetails, setShowDetails] = useState(false);
-    const [selectedArticle, setSelectedArticle] = useState(null);
+    // const [showCreate, setShowCreate] = useState(false);
+    // const [showDetails, setShowDetails] = useState(false);
+    // const [selectedArticle, setSelectedArticle] = useState(null);
 
     useEffect(() => {
+        // const abortController = new AbortController(); not completed functionality
+
         articleAPI.getAll()
             .then(result => setArticles(result))
             .catch(err => console.log(err)) // implement error message
     }, []) 
 
-    const createArticleClickHandler = () => {
-        setShowCreate(true)
-    }
+    // const createArticleClickHandler = () => {
+    //     setShowCreate(true)
+    // }
 
-    const hideCreateArticleModal = () => {
-        setShowCreate(false)
+    // const hideCreateArticle = () => {
+    //     setShowCreate(false)
 
-    }
+    // }
 
-    const ArticleCreateHandler = async (e) => {
-        e.preventDefault();
+    // const ArticleCreateHandler = async (e) => {
+    //     e.preventDefault();
         
-        const data = Object.fromEntries(new FormData(e.currentTarget));
-        const newArticle = await articleAPI.create(data);
+    //     const data = Object.fromEntries(new FormData(e.currentTarget));
+    //     const newArticle = await articleAPI.create(data);
 
-        setArticles(state => [...state, newArticle]) 
+    //     setArticles(state => [...state, newArticle]) 
         
-        setShowCreate(false);
-    }
+    //     setShowCreate(false);
+    // }
 
     const articleDetailsClickHandler = async (articleId) => {
+        // use try catch
         const articleDetails = await articleAPI.getOne(articleId);
         setSelectedArticle(articleId);
         setShowDetails(true);
@@ -48,10 +51,7 @@ export default function ArticleList (props) {
 
     return (
 
-        <div>
-
-            <h1>Articles Default</h1>
-            <div>
+            <>
                 {articles.map(article => (
                     <ArticleElement
                     key={article._id}
@@ -64,17 +64,17 @@ export default function ArticleList (props) {
                     img={article.img}
                     comments={article.comments}
                     onDetailsClick={articleDetailsClickHandler}
-
                     />     
-                    ))}
+                ))}
 
-            </div>
-
-            {/* <button className="btn btn-primary btn-block my-4" onClick={createArticleClickHandler}> Create article</button> */}
-            
-            {showCreate && (
+                {articles.length === 0 && (
+                    // Use css
+                    <h3 className="container">No articles yet</h3>
+                )}
+           
+            {/* {showCreate && (
                 <CreateArticle 
-                    onClose={hideCreateArticleModal}
+                    onClose={hideCreateArticle}
                     onCreate={ArticleCreateHandler}
                 />
             )}
@@ -84,9 +84,9 @@ export default function ArticleList (props) {
                     onClose={() => setShowDetails(false)} 
                     articleId={selectedArticle}
                     />
-                    )}
+                    )} */}
 
-        </div>
+        </>
     )
 
 }

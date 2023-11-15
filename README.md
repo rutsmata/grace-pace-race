@@ -4,4 +4,3 @@ By clicking the Articles button, application will load all articles available wi
 Visitors can switch between articles page and home page as well as will have access to login and register forms.
 Logged users will have access to the following functionalities: Create article, Comment on article, Subscribe for test drive and filter for electric cars articles only.
 
-The application uses React JS as a front-end and Express Node.js as a back-end. Database is supported by MongoDB.

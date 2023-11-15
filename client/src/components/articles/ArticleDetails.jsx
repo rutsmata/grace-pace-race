@@ -1,34 +1,29 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+import * as articleAPI from '../../api/articleAPI'
+
 import { Link } from "react-router-dom";
 import styles from './ArticleDetails.module.css'
 
+import { formatDate } from "../../utils/dataUtils"
 
-export default function ArticleDetails (
-    title,
-) {
+
+export default function ArticleDetails () {
     const {articleId} = useParams();
     const navigate = useNavigate();
     const [articleDetails, setArticleDetails] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/articles/${articleId}`)
-            .then(res => {
-                    if (!res.ok) {
-                        throw new Error("Article Not Found")
-                    }
-                    return res.json()
-                })
-            
+
+        articleAPI.getOne(articleId)
             .then(setArticleDetails)
-            .catch((err) => {
-                navigate('/404')
-            })
-    }, [articleId])
+            .catch ((err) => navigate('/404'))
+
+    }, [articleId]);
 
     return (
-        <div>
+        <>
 
             <header className="page-header page-header-mini">
                 <h1 className="title">
@@ -48,11 +43,12 @@ export default function ArticleDetails (
                             <Link to="#" className="badge badge-primary">{articleDetails.author}</Link>
                             </div>
                             <small className="small text-muted">
-                            <Link to="#" className="text-muted">Comments {articleDetails.comments?.length} </Link>
+                                <Link to="#" className="text-muted"> {formatDate(articleDetails.createdAt)}</Link>
+                                <span className="px-2">-</span>
+                                <Link to="#" className="text-muted">Comments {articleDetails.comments?.length} </Link>
                             </small>
                         </div>
                         <div className="card-body border-top">
-                            <p className="my-3">{articleDetails.title}</p>
 
                             <p>
                             {articleDetails.description}
@@ -152,7 +148,7 @@ export default function ArticleDetails (
                                 <div className="form-group col-18">
                                 <Link to="/posts/{{post._id}}/edit" className={styles['edit-btn']}>Edit</Link>
                                 <Link to="/posts/{{post._id}}/delete" className={styles['del-btn']}>Delete</Link>
-                                <Link to="#" className={styles['del-btn']}>Back</Link>
+                                <Link to="/articles" className={styles['del-btn']}>Back</Link>
 
                                 
                                 <button className="btn btn-primary btn-block">
@@ -167,7 +163,7 @@ export default function ArticleDetails (
                         </div>
             </section>
       
-        </div>
+        </>
 
     )
 }

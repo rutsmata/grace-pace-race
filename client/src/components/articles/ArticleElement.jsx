@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import { formatDate } from "../../utils/dataUtils"
 
 export default function ArticleElement ({
   articleId,
@@ -30,21 +29,9 @@ export default function ArticleElement ({
                 </div>
                 <div className="card-body px-0">
                   <h5 className="card-title mb-2">{title}</h5>
-                  <small className="small text-muted">
-                  <Link to="#" className="text-muted">
-                      {formatDate(createdAt)}
-                    </Link>
-                    <span className="px-2">-</span>
-                    <Link to="#" className="text-muted">
-                    Comments {comments?.length} 
-                    </Link>
-                  </small>
-                  <p className="my-2">
-                    {description}
-                  </p>
                 </div>
                 <div className="card-footer p-0 text-center">
-                  <Link to={`./${articleId}`} className="btn btn-outline-dark btn-sm" >DETAILS </Link>
+                  <Link to={`/articles/${articleId}`} className="btn btn-outline-dark btn-sm" >DETAILS </Link>
 
                 </div>
               </div>

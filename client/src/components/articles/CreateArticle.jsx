@@ -30,6 +30,7 @@ export default function CreateArticle () {
 
     const resetFormHandler = () => {
       setFormValues(formInitialState)
+
     }
 
     const submitHandler = async (e) => {
@@ -39,7 +40,7 @@ export default function CreateArticle () {
         await articleAPI.create(formValues)
 
       } catch (error) {
-        console.log((err));
+        console.log((error));
         
       }
       resetFormHandler()

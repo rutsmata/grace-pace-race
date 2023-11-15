@@ -29,7 +29,7 @@ export default function NavBar () {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/create" className="nav-link">
+              <Link to="/articles/create" className="nav-link">
                 Create article
               </Link>
             </li>

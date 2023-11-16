@@ -14,11 +14,11 @@ export default function ArticleList () {
     // const [selectedArticle, setSelectedArticle] = useState(null);
 
     useEffect(() => {
-        // const abortController = new AbortController(); not completed functionality
 
         articleAPI.getAll()
             .then(result => setArticles(result))
             .catch(err => console.log(err)) // implement error message
+
     }, []) 
 
     // const createArticleClickHandler = () => {

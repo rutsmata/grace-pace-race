@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import * as articleAPI from '../../api/articleAPI'
 
 import styles from './CreateArticle.module.css'
-import css from '../login/Login.module.css'
 
 const formInitialState = {
     author: '',
@@ -55,12 +54,12 @@ export default function CreateArticle () {
 
                 <form  method="post" className={styles.createForm}>
                   <h2>Create Article</h2>
-                  <ul className={css.noBullet}>
+                  <ul className={styles.noBullet}>
                   <li>
                       <label htmlFor="author">Author:</label>
                       <input
                         type="text"
-                        className={css.inputFields}
+                        className={styles.inputFields}
                         id="author"
                         placeholder="First Name & Last Name"
                         name="author"
@@ -72,7 +71,7 @@ export default function CreateArticle () {
                       <label htmlFor="title">Title:</label>
                       <input
                         type="text"
-                        className={css.inputFields}
+                        className={styles.inputFields}
                         id="title"
                         placeholder="Article Title"
                         name="title"
@@ -86,7 +85,7 @@ export default function CreateArticle () {
                       <select 
                           id="type" 
                           name="type" 
-                          className={css.inputFields} 
+                          className={styles.inputFields} 
                           onChange={changeHandler} 
                           value={formValues.type}
                       >
@@ -100,7 +99,7 @@ export default function CreateArticle () {
                       <label htmlFor="description">Description:</label>
                       <textarea
                         id="description"
-                        className={css.inputFields}
+                        className={styles.inputFields}
                         name="description"
                         placeholder="Article Text Here..."
                         value={formValues.description}
@@ -111,7 +110,7 @@ export default function CreateArticle () {
                       <label htmlFor="img">Image:</label>
                       <input
                         type="text"
-                        className={css.inputFields}
+                        className={styles.inputFields}
                         id="img"
                         placeholder="http://..."
                         name="img"

@@ -53,6 +53,25 @@
     z-index: 30;
     margin-top: 50px;
   }
+
+.inputFields {
+    margin: 18px 0;
+    font-size: 19px;
+    padding: 10px;
+    width: 270px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: white;
+    outline: none;
+}
+
+.noBullet {
+    list-style-type: none;
+    padding: 0;
+}
   
   @media (min-width: 930px) {
     .modal {

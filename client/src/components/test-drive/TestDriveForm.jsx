@@ -28,6 +28,7 @@ export default function TestDriveForm () {
     const submitHandler = () => {
       console.log(formValues);
       resetFormHandler()
+      
       navigate('/')
 
     }

@@ -39,8 +39,8 @@ export default function Comments () {
         e.preventDefault()
         
         try {
-            const result = await commentAPI.create(formValues)
-            console.log(result);                
+            const newComment = await commentAPI.create(formValues)
+            setComments(state => [...state, newComment])
             
         } catch (error) {
             console.log((error));
@@ -63,10 +63,10 @@ export default function Comments () {
 
                             <div className="media-body align-items-center">
 
-                                {comments.map(({username, comment}) => (
+                                {comments.map(({_id, username, comment}) => (
 
-                                    <div className="media-body">
-                                        <h6 className="mt-0">Username</h6>
+                                    <div key={_id} className="card-body px-1">
+                                        <h6 className="mt-0">{username}</h6>
                                         <p>
                                         {comment}
                                         </p>

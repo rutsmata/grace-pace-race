@@ -55,9 +55,7 @@ export default function ArticleDetails () {
                             {articleDetails.description}
                             </p>
                         </div>
-                            <Comments
-                            
-                            />
+                            <Comments/>
                         </div>
                         </div>
                         </div>

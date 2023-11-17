@@ -24,22 +24,22 @@ export default function Register () {
         }))
   }
 
-  const resetFormHandler = () => {
-    setFormValues(formInitialState)
-  }
+    const resetFormHandler = () => {
+      setFormValues(formInitialState)
+    }
 
-  const submitHandler = () => {
-    console.log(formValues);
-    resetFormHandler()
-    navigate('/')
+    const submitHandler = () => {
+      console.log(formValues);
+      resetFormHandler()
+      navigate('/')
 
-  }
+    }
 
-  const lengthValidator = () => {
-        if (formValues.password.length < 3) {
-            setPasswordError('Password should be at least 3 characters')
-        } 
-  }
+    const lengthValidator = () => {
+          if (formValues.password.length < 3) {
+              setPasswordError('Password should be at least 3 characters')
+          } 
+    }
 
 
   return (

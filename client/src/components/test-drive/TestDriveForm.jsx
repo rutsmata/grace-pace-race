@@ -1,20 +1,57 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import styles from './TestDriveForm.module.css'
 
+const formInitialState = {
+    firstname: '',
+    lastname: '',
+    subject: ''
+
+}
+
 export default function TestDriveForm () {
+    const navigate = useNavigate()
+    const [formValues, setFormValues] = useState(formInitialState);
+
+    const changeHandler = (e) => {
+        setFormValues(state => ({
+            ...state,
+            [e.target.name]: e.target.value,
+        }))
+  }
+
+    const resetFormHandler = () => {
+      setFormValues(formInitialState)
+    }
+
+    const submitHandler = () => {
+      console.log(formValues);
+      resetFormHandler()
+      navigate('/')
+
+    }
+
     return (
      
         <div>
             <h2>Test Drive Form</h2>
-            <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
 
             <div className={styles.container}>
-            <form action="/action_page.php">
+            <form >
             <div className={styles.row}>
                 <div className={styles["col-25"]}>
                 <label htmlFor="fname">First Name</label>
                 </div>
                 <div className={styles["col-75"]}>
-                <input type="text" id="fname" name="firstname" placeholder="Your name.."/>
+                <input 
+                type="text" 
+                id="fname" 
+                name="firstname" 
+                placeholder="Your name.."
+                value={formValues.firstname}
+                onChange={changeHandler}
+                />
                 </div>
             </div>
             <div className={styles.row}>
@@ -22,7 +59,14 @@ export default function TestDriveForm () {
                 <label htmlFor="lname">Last Name</label>
                 </div>
                 <div className={styles["col-75"]}>
-                <input type="text" id="lname" name="lastname" placeholder="Your last name.."/>
+                <input 
+                type="text" 
+                id="lname" 
+                name="lastname" 
+                placeholder="Your last name.."
+                value={formValues.lastname}
+                onChange={changeHandler}
+                />
                 </div>
             </div>
             <div className={styles.row}>
@@ -42,13 +86,20 @@ export default function TestDriveForm () {
                 <label htmlFor="subject">Subject</label>
                 </div>
                 <div className={styles["col-75"]}>
-                {/* <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea> */}
-                <textarea id="subject" name="subject" placeholder="Write something.." ></textarea>
+                <textarea 
+                id="subject" 
+                name="subject" 
+                placeholder="Write something.." 
+                value={formValues.subject}
+                onChange={changeHandler}
+                >
+
+                </textarea>
                 </div>
             </div>
             <br/>
             <div className={styles.row}>
-                <input type="submit" value="Submit"/>
+                <button onClick={submitHandler} type="button" value="Submit">Submit</button>
             </div>
             </form>
             </div>

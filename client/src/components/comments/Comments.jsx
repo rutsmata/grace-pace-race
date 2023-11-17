@@ -18,7 +18,7 @@ export default function Comments () {
     const [comments, setComments] = useState([]);
 
     useEffect (() => {
-        commentAPI.getAll()
+        commentAPI.getAll(articleId)
             .then(setComments);
 
     }, [articleId])

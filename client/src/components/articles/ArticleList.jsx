@@ -19,7 +19,6 @@ export default function ArticleList () {
         // use try catch
         const articleDetails = await articleAPI.getOne(articleId);
         setSelectedArticle(articleId);
-        // setShowDetails(true);
 
     }
 

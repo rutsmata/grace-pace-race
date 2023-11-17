@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import * as articleAPI from '../../api/articleAPI'
 
 import { formatDate } from "../../utils/dataUtils"
-import Comments from "../comments/comments";
 
+import Comments from '../comments/Comments'
 
 
 export default function ArticleDetails () {
@@ -55,8 +55,9 @@ export default function ArticleDetails () {
                             {articleDetails.description}
                             </p>
                         </div>
-
-                            <Comments/>
+                            <Comments
+                            
+                            />
                         </div>
                         </div>
                         </div>

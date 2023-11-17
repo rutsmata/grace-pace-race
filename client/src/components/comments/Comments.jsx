@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import ArticleDetails from '../articles/ArticleDetails'
 
 import * as commentAPI from '../../api/commentAPI'
 
@@ -15,8 +14,14 @@ const formInitialState = {
 
 export default function Comments () {
     const {articleId} = useParams();
+    const [formValues, setFormValues] = useState(formInitialState);
+    const [comments, setComments] = useState([]);
 
-    const [formValues, setFormValues] = useState(formInitialState)
+    useEffect (() => {
+        commentAPI.getAll()
+            .then(setComments);
+
+    }, [articleId])
 
     const changeHandler = (e) => {
         setFormValues(state => ({
@@ -34,8 +39,8 @@ export default function Comments () {
         e.preventDefault()
         
         try {
-            await commentAPI.create(formValues)
-                            
+            const result = await commentAPI.create(formValues)
+            console.log(result);                
             
         } catch (error) {
             console.log((error));
@@ -52,73 +57,28 @@ export default function Comments () {
                     {/* for Guests and Users */}
                         <div className="card-footer">
                             <h6 className="mt-5 mb-3 text-center">
-                            <Link to="#" className="text-dark">Comments {ArticleDetails.comments?.length}</Link>
+                            <Link to="#" className="text-dark">Comments</Link>
                             </h6>
                             <hr />
-                            <div className="media">
-                            <img
-                                src="public/imgs/avatar-1.jpg"
-                                className="mr-3 thumb-sm rounded-circle"
-                                alt="..."
-                            />
-                            <div className="media-body">
-                                <h6 className="mt-0">Janice Wilder</h6>
-                                <p>
-                                    {ArticleDetails.comments?.join('-')}
-                                </p>
-                                <Link to="#" className="text-dark small font-weight-bold"
-                                ><i className="ti-back-right"></i> Replay</Link>
-                                <div className="media mt-5">
-                                <Link to="#" className="mr-3">
-                                    <img
-                                    src="public/imgs/avatar.jpg"
-                                    className="thumb-sm rounded-circle"
-                                    alt="..."
-                                    />
-                                </Link>
-                                <div className="media-body align-items-center">
-                                    <h6 className="mt-0">Joe Mitchell</h6>
-                                    <p>
-                                    Fusce condimentum nunc ac nisi vulputate fringilla.
-                                    Donec lacinia congue felis in faucibus
-                                    </p>
-                                    <Link to="#" className="text-dark small font-weight-bold"
-                                    ><i className="ti-back-right"></i> Replay</Link>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div className="media mt-5">
-                            <img
-                                src="public/imgs/avatar-2.jpg"
-                                className="mr-3 thumb-sm rounded-circle"
-                                alt="..."
-                            />
-                            <div className="media-body">
-                                <h6 className="mt-0">Crosby Meadows</h6>
-                                <p>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                                scelerisque ante sollicitudin.
-                                </p>
-                                <Link to="#" className="text-dark small font-weight-bold"
-                                ><i className="ti-back-right"></i> Replay</Link>
-                            </div>
-                            </div>
-                            <div className="media mt-4">
-                            <img
-                                src="public/imgs/avatar-3.jpg"
-                                className="mr-3 thumb-sm rounded-circle"
-                                alt="..."
-                            />
-                            <div className="media-body">
-                                <h6 className="mt-0">Jean Wiley</h6>
-                                <p>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                                scelerisque ante sollicitudin.
-                                </p>
-                                <Link to="#" className="text-dark small font-weight-bold"
-                                ><i className="ti-back-right"></i> Replay</Link>
-                            </div>
+
+                            <div className="media-body align-items-center">
+
+                                {comments.map(({username, comment}) => (
+
+                                    <div className="media-body">
+                                        <h6 className="mt-0">Username</h6>
+                                        <p>
+                                        {comment}
+                                        </p>
+                                        <Link to="#" className="text-dark small font-weight-bold"
+                                        ><i className="ti-back-right"></i> Vote</Link>
+                                    </div>
+                                ))}
+
+                                {comments.length === 0 && (
+                                        <h2 className="mt-0">No comments yet</h2>
+
+                                )}
                             </div>
 
                             <h6 className="mt-5 mb-3 text-center text-dark">Write Your Comment </h6>

@@ -1,33 +1,19 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 import styles from './Login.module.css'
-
-const formInitialState = {
-  email: '',
-  password: '',
-}
+import useForm from '../../hooks/useForm';
 
 export default function Login () {
-    const navigate = useNavigate()
-    const [formValues, setFormValues] = useState(formInitialState);
+    const navigate = useNavigate();
 
-    const changeHandler = (e) => {
-          setFormValues(state => ({
-              ...state,
-              [e.target.name]: e.target.value,
-          }))
-    }
-
-    const resetFormHandler = () => {
-      setFormValues(formInitialState)
-    }
+    const {formValues, changeHandler} = useForm({
+      email: '',
+      password: '',
+    });
 
     const submitHandler = () => {
       console.log(formValues);
-      resetFormHandler();
       navigate('/')
-
     }
 
   return (

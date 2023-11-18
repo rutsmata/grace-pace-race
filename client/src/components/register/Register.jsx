@@ -2,37 +2,23 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 import styles from './Register.module.css'
+import useForm from '../../hooks/useForm';
 
-const formInitialState = {
+export default function Register () {
+    const navigate = useNavigate();
+
+    const {formValues, changeHandler} = useForm({    
     firstname: '',
     lastname: '',
     email: '',
     password: '',
     repeatPassword: ''
-}
+    });
 
-export default function Register () {
-    const navigate = useNavigate();
-
-    const [formValues, setFormValues] = useState(formInitialState);
     const [passwordError, setPasswordError] = useState('');
 
-    const changeHandler = (e) => {
-        setFormValues(state => ({
-            ...state,
-            [e.target.name]: e.target.value,
-        }))
-  }
-
-    const resetFormHandler = () => {
-      setFormValues(formInitialState)
-    }
-
     const submitHandler = () => {
-      console.log(formValues);
-      resetFormHandler()
       navigate('/')
-
     }
 
     const lengthValidator = () => {
@@ -115,7 +101,7 @@ export default function Register () {
                                   />
                               </li>
                               <li id="center-btn">
-                                  <button className={styles['join-btn']} type="button" onClick={submitHandler} disabled={Object.values(passwordError).some(x => x)}>JOIN</button>
+                                  <button className={styles['join-btn']} type="button" onClick={submitHandler} disabled={Object.values(passwordError).some(x => x)}>JOIN</button>                                 
                               </li>
                           </ul>
                       </form>

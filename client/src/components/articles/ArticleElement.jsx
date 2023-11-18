@@ -32,6 +32,7 @@ export default function ArticleElement ({
                 </div>
                 <div className="card-footer p-0 text-center">
                   <Link to={`/articles/${articleId}`} className="btn btn-outline-dark btn-sm" >DETAILS </Link>
+                  <hr></hr>
 
                 </div>
               </div>

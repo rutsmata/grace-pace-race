@@ -26,7 +26,7 @@ export const create = async (data) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify(data)
     })
 
     const result = await response.json()

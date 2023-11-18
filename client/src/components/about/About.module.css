@@ -1,8 +1,10 @@
 .description {
     text-align: left;
+    margin-top: 2em;
     margin-left: 10px;
-    background-color: rgb(109, 143, 118);
-    color: azure;
+    margin-right: 10px;
+    background-color: #c2f6ea;;
+    color: rgb(161, 123, 90);
     padding: 30px;
     font-style: italic;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -14,8 +16,10 @@
     background: rgba(20, 20, 20, .6);
     font-size: 18px;
     color: white;
-    margin-top: 20px;
-    padding: 10px 43px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 10px;
+    padding: 5px 43px;
     cursor: pointer;
     transition: .4s;
 }

@@ -18,6 +18,7 @@ export default function Register () {
     const [passwordError, setPasswordError] = useState('');
 
     const submitHandler = () => {
+      console.log(formValues);
       navigate('/')
     }
 

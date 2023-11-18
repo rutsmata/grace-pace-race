@@ -18,6 +18,13 @@ export const getOne = async (articleId) => {
     return articleDetails;
 }
 
+export const deleteArticle = async (articleId) => {
+    await fetch(`${baseUrl}/${articleId}`, {
+        method: 'DELETE'
+
+    })
+}
+
 export const create = async (data) => {
     const body = {
         title: data.title,  

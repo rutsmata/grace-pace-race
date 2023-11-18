@@ -14,7 +14,7 @@ export default function TestDriveForm () {
     })
 
     const submitHandler = () => {
-      navigate('/apply')
+      navigate('/test-drive/apply')
     }
 
     return (

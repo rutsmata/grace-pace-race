@@ -32,7 +32,7 @@ function App() {
               <Route path='/register' element={<Register/>}/>
               <Route path='/login' element={<Login/>}/>
               <Route path='/test-drive' element={<TestDriveForm/>}/>
-                    <Route path ='/apply' element={<ModalForSuccess/>}/>
+                    <Route path ='/test-drive/apply' element={<ModalForSuccess/>}/>
               <Route/>
               <Route path='/about' element={<About/>}/>
                     <Route path='/more' element={<AboutMore/>} />

@@ -1,37 +1,20 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 import styles from './TestDriveForm.module.css'
+import useForm from '../../hooks/useForm';
 
-const formInitialState = {
-    firstname: '',
-    lastname: '',
-    subject: ''
-
-}
 
 export default function TestDriveForm () {
-    const navigate = useNavigate()
-    const [formValues, setFormValues] = useState(formInitialState);
+    const navigate = useNavigate();
 
-    const changeHandler = (e) => {
-        setFormValues(state => ({
-            ...state,
-            [e.target.name]: e.target.value,
-        }))
-  }
-
-    const resetFormHandler = () => {
-      setFormValues(formInitialState)
-    }
+    const {formValues, changeHandler} = useForm ({
+        firstname: '',
+        lastname: '',
+        subject: ''
+    })
 
     const submitHandler = () => {
-      console.log(formValues);
-      resetFormHandler()
-
-      
       navigate('/apply')
-
     }
 
     return (

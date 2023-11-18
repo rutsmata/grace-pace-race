@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import * as articleAPI from '../../api/articleAPI'
 
 import { formatDate } from "../../utils/dataUtils"
+import styles from './CreateArticle.module.css'
 
 import Comments from "../comments/comments";
 
@@ -53,7 +54,16 @@ export default function ArticleDetails () {
                             <p>
                             {articleDetails.description}
                             </p>
+                            
+                                {/* Edit/delete buttons (Only for creator of this game) */}
+
+                                <div className="form-group col-18">
+                                    <Link to="/posts/{{post._id}}/edit" className={styles['edit-btn']}>Edit</Link>
+                                    <Link to="/posts/{{post._id}}/delete" className={styles['del-btn']}>Delete</Link>
+                                    <Link to="/articles" className={styles['back-btn']}>Back</Link>
+                                </div>
                         </div>
+
                             <Comments/>
                         </div>
                         </div>

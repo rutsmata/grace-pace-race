@@ -103,8 +103,6 @@ export default function CreateArticle () {
                     </li>
                     <li id="center-btn">
                       <button className={styles['create-btn']} type="button" onClick={submitHandler}>Create</button>
-                      {/* <button className={styles['create-btn']} type="button" onClick={resetFormHandler}>Clear</button> */}
-
                     </li>
                   </ul>
                 </form>

@@ -96,7 +96,7 @@ export default function Comments () {
                                         name="comment"
                                         id="comment"
                                         cols="30"
-                                        rows="10"
+                                        rows="3"
                                         className="form-control"
                                         placeholder="Enter Your Comment Here"
                                         value={formValues.comment}
@@ -104,18 +104,11 @@ export default function Comments () {
                                     </textarea>
                                 </div>
                         
-                                {/* Edit/delete buttons (Only for creator of this game) */}
-                                
-                                <div className="form-group col-18">
-                                <Link to="/posts/{{post._id}}/edit" className={styles['edit-btn']}>Edit</Link>
-                                <Link to="/posts/{{post._id}}/delete" className={styles['del-btn']}>Delete</Link>
-                                <Link to="/articles" className={styles['del-btn']}>Back</Link>
-
                                 {/* Add comment (Only for logged-in users, which is not creator of the current article) */}
-                                <button className="btn btn-primary btn-block" onClick={addCommentHandler}>
+                                <button className={styles['comment-btn']} onClick={addCommentHandler}>
                                     Post Comment
                                 </button>
-                                </div>
+                                
                             </div>
                             </form>
                         </div>

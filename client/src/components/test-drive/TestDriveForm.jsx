@@ -35,7 +35,7 @@ export default function TestDriveForm () {
 
     return (
      
-        <div>
+        <div style={{  width: '57%', margin: '10px auto'}}>
             <h2>Test Drive Form</h2>
 
             <div className={styles.container}>

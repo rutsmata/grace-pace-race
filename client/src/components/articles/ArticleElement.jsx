@@ -17,7 +17,7 @@ export default function ArticleElement ({
         
 
         <div>
-            <div className="col-lg-10">
+            <div className="col-lg-6" style={{  width: '57%', margin: '10px auto'}}>
               <div className="card text-center mb-5">
                 <div className="card-header p-0">
                   <div className="blog-media">

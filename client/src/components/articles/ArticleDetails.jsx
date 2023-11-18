@@ -10,9 +10,9 @@ import styles from './CreateArticle.module.css'
 import Comments from "../comments/comments";
 
 export default function ArticleDetails () {
+    const [articleDetails, setArticleDetails] = useState({});
     const navigate = useNavigate();
     const {articleId} = useParams();
-    const [articleDetails, setArticleDetails] = useState({});
 
     useEffect(() => {
 

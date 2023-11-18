@@ -13,9 +13,9 @@ const formInitialState = {
 
 
 export default function Comments () {
-    const {articleId} = useParams();
     const [formValues, setFormValues] = useState(formInitialState);
     const [comments, setComments] = useState([]);
+    const {articleId} = useParams();
 
     useEffect (() => {
         commentAPI.getAll(articleId)

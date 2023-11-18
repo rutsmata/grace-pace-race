@@ -5,16 +5,17 @@ import styles from './Register.module.css'
 import useForm from '../../hooks/useForm';
 
 export default function Register () {
-    const navigate = useNavigate();
-
+  
     const {formValues, changeHandler} = useForm({    
-    firstname: '',
-    lastname: '',
-    email: '',
-    password: '',
-    repeatPassword: ''
+      firstname: '',
+      lastname: '',
+      email: '',
+      password: '',
+      repeatPassword: ''
     });
-
+  
+    const navigate = useNavigate();
+    
     const [passwordError, setPasswordError] = useState('');
 
     const submitHandler = () => {

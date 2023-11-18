@@ -6,15 +6,16 @@ import styles from './CreateArticle.module.css'
 import useForm from '../../hooks/useForm'
 
 export default function CreateArticle () {
-    const navigate = useNavigate();
-
+  
     const {formValues, changeHandler} = useForm({    
-    author: '',
-    title: '',
-    description: '',
-    img: '',
-    type: ''
-    })
+      author: '',
+      title: '',
+      description: '',
+      img: '',
+      type: ''
+    });
+    
+    const navigate = useNavigate();
 
     const submitHandler = async (e) => {
       e.preventDefault();

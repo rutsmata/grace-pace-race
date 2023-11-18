@@ -4,13 +4,14 @@ import styles from './Login.module.css'
 import useForm from '../../hooks/useForm';
 
 export default function Login () {
+  
+  const {formValues, changeHandler} = useForm({
+    email: '',
+    password: '',
+  });
+  
     const navigate = useNavigate();
-
-    const {formValues, changeHandler} = useForm({
-      email: '',
-      password: '',
-    });
-
+    
     const submitHandler = () => {
       console.log(formValues);
       navigate('/')

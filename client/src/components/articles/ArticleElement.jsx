@@ -3,18 +3,11 @@ import { Link } from "react-router-dom"
 export default function ArticleElement ({
   articleId,
   title, 
-  description, 
-  type, 
   author,
-  createdAt, 
   img,
-  comments,
 } ) {
 
-
-    return (
-
-        
+    return (     
 
         <div>
             <div className="col-lg-6" style={{  width: '57%', margin: '10px auto'}}>

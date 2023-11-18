@@ -1,36 +1,20 @@
-import { useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import * as articleAPI from '../../api/articleAPI'
 
 import styles from './CreateArticle.module.css'
+import useForm from '../../hooks/useForm'
 
-const formInitialState = {
+export default function CreateArticle () {
+    const navigate = useNavigate();
+
+    const {formValues, changeHandler} = useForm({    
     author: '',
     title: '',
     description: '',
     img: '',
     type: ''
-
-}
-
-export default function CreateArticle () {
-    const navigate = useNavigate();
-
-    const [formValues, setFormValues] = useState(formInitialState)
-
-
-    const changeHandler = (e) => {
-      setFormValues(state => ({
-          ...state,
-          [e.target.name]: e.target.value,
-      }))
-    }
-
-    const resetFormHandler = () => {
-      setFormValues(formInitialState)
-
-    }
+    })
 
     const submitHandler = async (e) => {
       e.preventDefault();
@@ -42,14 +26,12 @@ export default function CreateArticle () {
         console.log((error));
         
       }
-      resetFormHandler()
       navigate('/articles')
     }
 
  
     return (
-        <>
-              
+        <>              
               <div className={styles.createSection}>
 
                 <form  method="post" className={styles.createForm}>
@@ -90,6 +72,7 @@ export default function CreateArticle () {
                           value={formValues.type}
                       >
                               <option  >Select Genre</option>
+                                <option value='general' >General</option>
                                 <option value='electric' >Electric</option>
                                 <option value='hybrid'>Hybrid</option>
                                 <option value='sport'>Sport</option>
@@ -120,7 +103,7 @@ export default function CreateArticle () {
                     </li>
                     <li id="center-btn">
                       <button className={styles['create-btn']} type="button" onClick={submitHandler}>Create</button>
-                      <button className={styles['create-btn']} type="button" onClick={resetFormHandler}>Clear</button>
+                      {/* <button className={styles['create-btn']} type="button" onClick={resetFormHandler}>Clear</button> */}
 
                     </li>
                   </ul>

@@ -15,6 +15,7 @@ import LoadMorePostsButton from "./components/LoadMorePostsButton"
 import NotFound from "./components/not-found/NotFound"
 import Footer from "./components/footer/Footer"
 import Timer from "./components/Timer"
+import ModalForSuccess from './components/test-drive/ModalForSuccess'
 
 
 function App() {
@@ -31,8 +32,10 @@ function App() {
               <Route path='/register' element={<Register/>}/>
               <Route path='/login' element={<Login/>}/>
               <Route path='/test-drive' element={<TestDriveForm/>}/>
+                    <Route path ='/apply' element={<ModalForSuccess/>}/>
+              <Route/>
               <Route path='/about' element={<About/>}/>
-                    <Route path='more' element={<AboutMore/>} />
+                    <Route path='/more' element={<AboutMore/>} />
               <Route/>
               <Route path ="/articles" element={<ArticleList />}/>
               <Route path='/articles/create' element={<CreateArticle/>}/>

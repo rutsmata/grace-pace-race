@@ -6,8 +6,7 @@ import * as articleAPI from '../../api/articleAPI'
 
 import { formatDate } from "../../utils/dataUtils"
 
-import Comments from '../comments/Comments'
-
+import Comments from "../comments/comments";
 
 export default function ArticleDetails () {
     const navigate = useNavigate();

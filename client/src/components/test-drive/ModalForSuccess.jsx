@@ -1,5 +1,4 @@
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import {Button, Modal} from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 export default function ModalForSuccess () {
@@ -15,15 +14,15 @@ export default function ModalForSuccess () {
         className="modal show"
         style={{ display: 'block', position: 'initial' }}
         >
-            <Modal.Dialog>
+            <Modal show={true}>
             <Modal.Header>
-                <Modal.Title>Successful registration. We will contact you soon!</Modal.Title>
+                <Modal.Title>Congratulations! You have successfully registered for test drive. We will contact you soon!</Modal.Title>
             </Modal.Header>
     
             <Modal.Footer>
                 <Button variant="primary" onClick={exitModal}>Close</Button>
             </Modal.Footer>
-            </Modal.Dialog>
+            </Modal>
       </div>
     )
 }

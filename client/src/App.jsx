@@ -11,11 +11,11 @@ import Register from "./components/register/Register"
 import About from "./components/about/About"
 import AboutMore from './components/about/AboutMore'
 import TestDriveForm from "./components/test-drive/TestDriveForm"
+import ModalForSuccess from './components/test-drive/ModalForSuccess'
 import LoadMorePostsButton from "./components/LoadMorePostsButton"
 import NotFound from "./components/not-found/NotFound"
 import Footer from "./components/footer/Footer"
 import Timer from "./components/Timer"
-import ModalForSuccess from './components/test-drive/ModalForSuccess'
 
 
 function App() {

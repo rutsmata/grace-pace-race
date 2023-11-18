@@ -18,6 +18,11 @@ export default function NavBar () {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav">
+          <li className="nav-item">
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+            </li>
             <li className="nav-item">
               <Link to="/articles" className="nav-link">
                 Articles
@@ -40,11 +45,7 @@ export default function NavBar () {
               </Link>
             </li>
 
-            <li className="nav-item">
-              <Link to="/" className="nav-link">
-                Home
-              </Link>
-            </li>
+
           </ul>
           <div className="navbar-nav ml-auto">
             <li className="nav-item">

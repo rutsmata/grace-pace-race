@@ -19,16 +19,15 @@ export default function ArticleDetails () {
         articleAPI.getOne(articleId)
             .then(setArticleDetails)
             .catch ((err) => navigate('/404'))
+            
+        }, [articleId]);
+        
+    const onDeleteArticleClick = async (articleId) => {
+            await articleAPI.deleteArticle(articleId)
+            navigate('/articles')
+            // setArticleDetails(state => state.filter(x => x._id !== articleId))
+        }
 
-    }, [articleId]);
-
-    // useEffect(() => {
-
-    //     articleAPI.deleteArticle(articleId)
-    //         .then(setArticleDetails(state => state.filter(x => x._id !== articleId)))
-
-    // }, [articleId])
-  
 
     return (
         <>
@@ -66,7 +65,7 @@ export default function ArticleDetails () {
 
                                 <div className="form-group col-18">
                                     <Link to="/posts/{{post._id}}/edit" className={styles['edit-btn']}>Edit</Link>
-                                    <Link to={`/articles/${articleId}/delete`} className={styles['del-btn']}>Delete</Link>
+                                    <button onClick={() => onDeleteArticleClick(articleId)} className={styles['del-btn']}>Delete</button>
                                     <Link to="/articles" className={styles['back-btn']}>Back</Link>
                                 </div>
                         </div>

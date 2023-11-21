@@ -12,7 +12,8 @@ export default function Login () {
   
     const navigate = useNavigate();
     
-    const submitHandler = () => {
+    const submitHandler = (e) => {
+      e.preventDefault()
       console.log(formValues);
       navigate('/')
     }

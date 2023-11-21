@@ -64,7 +64,7 @@ export default function ArticleDetails () {
                                 {/* Edit/delete buttons (Only for creator of this game) */}
 
                                 <div className="form-group col-18">
-                                    <Link to="/posts/{{post._id}}/edit" className={styles['edit-btn']}>Edit</Link>
+                                    <button onClick={() => onEditArticleClick(articleId)} className={styles['edit-btn']}>Edit</button>
                                     <button onClick={() => onDeleteArticleClick(articleId)} className={styles['del-btn']}>Delete</button>
                                     <Link to="/articles" className={styles['back-btn']}>Back</Link>
                                 </div>

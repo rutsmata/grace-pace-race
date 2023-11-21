@@ -11,7 +11,6 @@ const formInitialState = {
     comment: '',
 }
 
-
 export default function Comments () {
     const [formValues, setFormValues] = useState(formInitialState);
     const [comments, setComments] = useState([]);
@@ -41,6 +40,7 @@ export default function Comments () {
         try {
             const newComment = await commentAPI.create(formValues)
             setComments(state => [...state, newComment])
+            console.log(formValues);
             
         } catch (error) {
             console.log((error));

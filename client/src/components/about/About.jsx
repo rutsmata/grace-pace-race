@@ -14,7 +14,7 @@ export default function AppDescription () {
         </div>
 
         <nav>
-            <Link to="/more" className={styles.btn}>More info</Link>
+            <Link to="/about/more" className={styles.btn}>More info</Link>
 
         </nav>
 

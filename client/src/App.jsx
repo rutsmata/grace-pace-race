@@ -35,7 +35,7 @@ function App() {
                     <Route path ='/test-drive/apply' element={<ModalForSuccess/>}/>
               <Route/>
               <Route path='/about' element={<About/>}/>
-                    <Route path='/more' element={<AboutMore/>} />
+                    <Route path='/about/more' element={<AboutMore/>} />
               <Route/>
               <Route path ="/articles" element={<ArticleList />}/>
               <Route path='/articles/create' element={<CreateArticle/>}/>

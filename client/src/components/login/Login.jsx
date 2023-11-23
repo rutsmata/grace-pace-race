@@ -1,9 +1,12 @@
 import { useNavigate } from 'react-router-dom';
-
-import styles from './Login.module.css'
+import { useState } from 'react';
+import * as authAPI from '../../api/authAPI'
 import useForm from '../../hooks/useForm';
 
+import styles from './Login.module.css'
+
 export default function Login () {
+  const [auth, setAuth] = useState({})
   
   const {formValues, changeHandler} = useForm({
     email: '',
@@ -12,9 +15,17 @@ export default function Login () {
   
     const navigate = useNavigate();
     
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
       e.preventDefault()
-      console.log(formValues);
+
+      try {
+        const result = await authAPI.login(formValues.email, formValues.password);
+        
+        setAuth(result)
+
+      } catch (error) {
+          console.log(error);
+      }
       navigate('/')
     }
 
@@ -24,7 +35,7 @@ export default function Login () {
 
               <div className={styles.loginSection}>
          
-              <form method="post" className={styles.loginForm}>
+              <form className={styles.loginForm}>
                 <h2>Login</h2>
                 <ul className={styles.noBullet}>
                   <li>

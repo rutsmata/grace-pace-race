@@ -1,4 +1,5 @@
 import {Routes, Route} from 'react-router-dom'
+import { useState } from 'react'
 
 import Header from "./components/header/Header"
 import NavBar from "./components/navigation/NavBar"
@@ -19,6 +20,13 @@ import Timer from "./components/Timer"
 
 
 function App() {
+      // const [auth, setAuth] = useState({});
+
+      // const loginSubmitHandler = (formValues) => {
+      //   const result = await authAPI.login(formValues.email, formValues.password);
+        
+      //   setAuth(result)
+      // }
 
   return (
       < >
@@ -30,7 +38,7 @@ function App() {
 
               <Route path='/' element={<HomePage/>}/>
               <Route path='/register' element={<Register/>}/>
-              <Route path='/login' element={<Login/>}/>
+              <Route path='/login' element={<Login  />}/>
               <Route path='/test-drive' element={<TestDriveForm/>}/>
                     <Route path ='/test-drive/apply' element={<ModalForSuccess/>}/>
               <Route/>

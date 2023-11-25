@@ -15,9 +15,22 @@ import TestDriveForm from "./components/test-drive/TestDriveForm"
 import ModalForSuccess from './components/test-drive/ModalForSuccess'
 import NotFound from "./components/not-found/NotFound"
 import Footer from "./components/footer/Footer"
+import AuthContext from './contexts/Auth'
 
 
 function App() {
+
+      const [auth, setAuth] = useState({});
+
+      const loginSubmitHandler = (formValues) => {
+            console.log(formValues);
+      }
+
+      // const loginSubmitHandler = async (formValues) => {
+      //   const result = await authAPI.login(formValues.email, formValues.password);
+        
+      //   setAuth(result)
+      // }
 
       // const [isAuth, setIsAuth] = useState(false);
 
@@ -48,16 +61,8 @@ function App() {
       //       }
       // }
 
-      // prior
-      // const [auth, setAuth] = useState({});
-
-      // const loginSubmitHandler = (formValues) => {
-      //   const result = await authAPI.login(formValues.email, formValues.password);
-        
-      //   setAuth(result)
-      // }
-
   return (
+      <AuthContext.Provider value={{loginSubmitHandler}}>
       < >
           <Header/>
 
@@ -87,6 +92,7 @@ function App() {
           <Footer/>
      
         </>
+        </AuthContext.Provider>
   )
 }
 

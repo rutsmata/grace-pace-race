@@ -1,20 +1,27 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import * as authAPI from '../../api/authAPI'
 import useForm from '../../hooks/useForm';
 
 import styles from './Login.module.css'
+import AuthContext from '../../contexts/Auth';
+
+const LoginFormKeys = {
+  Email: 'email',
+  Password: 'password'
+}
 
 export default function Login () {
+  const {loginSubmitHandler} = useContext(AuthContext)
   
-  const {formValues, onChange, onSubmit} = useForm({
-    email: '',
-    password: '',
+  const {formValues, onChange, onSubmit} = useForm(loginSubmitHandler, {
+    [LoginFormKeys.Email]: '',
+    [LoginFormKeys.Password]: '',
   });
   
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     
-    // const submitHandler = async (e) => {
+    // const onSumbit = async (e) => {
     //   e.preventDefault()
     //   console.log(formValues);
     //   navigate('/')
@@ -55,10 +62,10 @@ export default function Login () {
                       type="text"
                       className={styles.inputFields}
                       id="email"
-                      name="email"
-                      value={formValues.email}
-                      placeholder="alex@gmail.com"
+                      name={LoginFormKeys.Email}
                       onChange={onChange}
+                      value={formValues[LoginFormKeys.Email]}
+                      placeholder="alex@gmail.com"
                     />
                   </li>
                   <li>
@@ -67,10 +74,10 @@ export default function Login () {
                       type="password"
                       className={styles.inputFields}
                       id="password"
-                      name="password"
-                      value={formValues.password}
-                      placeholder="*******"
+                      name={LoginFormKeys.Password}
                       onChange={onChange}
+                      value={formValues[LoginFormKeys.Password]}
+                      placeholder="*******"
                     />
                   </li>
 
@@ -78,7 +85,7 @@ export default function Login () {
 
 
                   {/* <li id="center-btn">
-                    <button className={styles['login-btn']} type="button" onClick={submitHandler}>Login</button>
+                    <button className={styles['login-btn']} type="button" onClick={onSumbit}>Login</button>
                   </li> */}
                 </ul>
               </form>

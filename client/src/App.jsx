@@ -21,15 +21,16 @@ import NotFound from "./components/not-found/NotFound";
 import Footer from "./components/footer/Footer";
 
 function App() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [auth, setAuth] = useState({});
 
   const loginSubmitHandler = async (formValues) => {
     const result = await authAPI.login(formValues.email, formValues.password);
     // implement error handling
 
+    console.log(result);
+
     setAuth(result);
-    
     navigate(Path.Home);
   };
 
@@ -62,8 +63,15 @@ function App() {
   //       }
   // }
 
+  const values = {
+    loginSubmitHandler,
+    email: auth.email,
+    username: auth.username,
+    isAuth: !!auth.username,
+  }
+
   return (
-    <AuthContext.Provider value={{ loginSubmitHandler }}>
+    <AuthContext.Provider value={ values }>
       <>
         <Header />
 
@@ -72,7 +80,7 @@ function App() {
         />
 
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path={Path.Home} element={<HomePage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/test-drive" element={<TestDriveForm />} />

@@ -4,7 +4,7 @@ import * as authAPI from '../../api/authAPI'
 import useForm from '../../hooks/useForm';
 
 import styles from './Login.module.css'
-import AuthContext from '../../contexts/Auth';
+import AuthContext from '../../contexts/AuthContext';
 
 const LoginFormKeys = {
   Email: 'email',

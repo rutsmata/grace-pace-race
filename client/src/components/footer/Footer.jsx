@@ -3,6 +3,9 @@ import { Link } from "react-router-dom"
 export default function Footer () {
     return (
         <div>
+          <a className="btn btn-primary btn-block my-4">
+            GRACE PACE RACE
+          </a>
 
     <footer className="page-footer">
       <div className="container">

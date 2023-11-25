@@ -6,7 +6,6 @@ import useForm from '../../hooks/useForm';
 import styles from './Login.module.css'
 
 export default function Login () {
-  const [auth, setAuth] = useState({})
   
   const {formValues, changeHandler} = useForm({
     email: '',
@@ -20,14 +19,24 @@ export default function Login () {
 
       try {
         const result = await authAPI.login(formValues.email, formValues.password);
-        
-        setAuth(result)
+        localStorage.setItem('token', result.accessToken);
+
+        navigate('/')
+        location.reload();
 
       } catch (error) {
           console.log(error);
       }
-      navigate('/')
+      return false;
     }
+
+    // const loginDetails = {
+    //   username: auth.username,
+    //   email: auth.email,
+    //   isAuthenticated: !!auth.username,
+    // }
+
+    
 
   return (
 

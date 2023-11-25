@@ -6,10 +6,10 @@ export default function NavBar (props = {}) {
       isAuth = false,
     } = props;
   
-    function logoutMe() {
-      localStorage.removeItem('token');
-      location.reload();
-    }
+    // function logoutMe() {
+    //   localStorage.removeItem('token');
+    //   location.reload();
+    // }
 
     return (
         <div>

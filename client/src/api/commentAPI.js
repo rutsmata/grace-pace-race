@@ -3,11 +3,12 @@ const baseUrl = "http://localhost:3030/jsonstore/comments";
 export const getAll = async (articleId) => {
     const query = new URLSearchParams({
         where: `articleId="${articleId}"`
-    })
+    });
     // Jsonstore does not support advance retrieval, need to migrate to collection service
-    const response = await fetch(`${baseUrl}?${query}`);
+    const response = await fetch(`${baseUrl}`);
     const result = await response.json();
 
+    //filter is missing as per Papazov code .filter(comment => comment.articledId === articleId)
     const data = Object.values(result)
 
     return data;

@@ -19,35 +19,36 @@ import Footer from "./components/footer/Footer"
 
 function App() {
 
-      const [isAuth, setIsAuth] = useState(false);
+      // const [isAuth, setIsAuth] = useState(false);
 
-      useEffect(() => {
-            // check login -> chekck login based of token stored in local/storage.
-            // if yes set is isAuth to true
-            isAuthCheck();
-      }, []);
+      // useEffect(() => {
+      //       // check login -> chekck login based of token stored in local/storage.
+      //       // if yes set is isAuth to true
+      //       isAuthCheck();
+      // }, []);
 
-      function isAuthCheck() {
-            const token = localStorage.getItem('token');
-            if (!token) {
-                  setIsAuth(false);
-            }
+      // function isAuthCheck() {
+      //       const token = localStorage.getItem('token');
+      //       if (!token) {
+      //             setIsAuth(false);
+      //       }
             
-            if (token) {
-            fetch('/users/me', {
-                  headers: {
-                        'X-Authorization' : token
-                  }
-            })
-            .then(() => {
-                  setIsAuth(true);
-            })
-            .catch(err => {
-                  setIsAuth(false);
-            });
-            }
-      }
+      //       if (token) {
+      //       fetch('/users/me', {
+      //             headers: {
+      //                   'X-Authorization' : token
+      //             }
+      //       })
+      //       .then(() => {
+      //             setIsAuth(true);
+      //       })
+      //       .catch(err => {
+      //             setIsAuth(false);
+      //       });
+      //       }
+      // }
 
+      // prior
       // const [auth, setAuth] = useState({});
 
       // const loginSubmitHandler = (formValues) => {
@@ -61,7 +62,7 @@ function App() {
           <Header/>
 
           <NavBar
-            isAuth={isAuth}
+            // isAuth={isAuth}
           />
 
           <Routes>

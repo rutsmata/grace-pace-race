@@ -26,13 +26,21 @@ function App() {
 
   const loginSubmitHandler = async (formValues) => {
     const result = await authAPI.login(formValues.email, formValues.password);
-    // implement error handling
+    // implement error handling for password mismatch
+
+    setAuth(result);
+    navigate(Path.Home);
+  };
+
+  const registerSubmitHandler = async (formValues) => {
+    const result = await authAPI.register(formValues.email, formValues.password);
+    // implement error handling for same user
 
     console.log(result);
 
     setAuth(result);
     navigate(Path.Home);
-  };
+  }
 
   // const [isAuth, setIsAuth] = useState(false);
 
@@ -65,6 +73,7 @@ function App() {
 
   const values = {
     loginSubmitHandler,
+    registerSubmitHandler,
     email: auth.email,
     username: auth.username,
     isAuth: !!auth.username,
@@ -75,24 +84,22 @@ function App() {
       <>
         <Header />
 
-        <NavBar
-        // isAuth={isAuth}
-        />
+        <NavBar/>
 
         <Routes>
           <Route path={Path.Home} element={<HomePage />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/test-drive" element={<TestDriveForm />} />
-          <Route path="/test-drive/apply" element={<ModalForSuccess />} />
+          <Route path={Path.Register} element={<Register />} />
+          <Route path={Path.Login} element={<Login />} />
+          <Route path={Path.TestDrive} element={<TestDriveForm />} />
+          <Route path={Path.ModalTestDrive} element={<ModalForSuccess />} />
           <Route />
-          <Route path="/about" element={<About />} />
-          <Route path="/about/more" element={<AboutMore />} />
+          <Route path={Path.About} element={<About />} />
+          <Route path={Path.Video} element={<AboutMore />} />
           <Route />
-          <Route path="/articles" element={<ArticleList />} />
-          <Route path="/articles/create" element={<CreateArticle />} />
-          <Route path="/articles/:articleId" element={<ArticleDetails />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path={Path.Articles} element={<ArticleList />} />
+          <Route path={Path.CreateArticle} element={<CreateArticle />} />
+          <Route path={Path.ArticleDetails} element={<ArticleDetails />} />
+          <Route path={Path[404]} element={<NotFound />} />
         </Routes>
 
         <Footer />

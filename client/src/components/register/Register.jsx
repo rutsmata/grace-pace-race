@@ -1,33 +1,44 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 import styles from './Register.module.css'
 import useForm from '../../hooks/useForm';
+import AuthContext from '../../contexts/AuthContext';
+
+const RegisterFormKeys = {
+    FirstName: 'firstname',
+    LastName: 'lastname',
+    Email: 'email',
+    Password: 'password',
+    RepeatPassword: 'repeatPassword'
+}
 
 export default function Register () {
   
-    const {formValues, changeHandler} = useForm({    
-      firstname: '',
-      lastname: '',
-      email: '',
-      password: '',
-      repeatPassword: ''
+  const {registerSubmitHandler} = useContext(AuthContext);
+
+    const {formValues, onChange, onSubmit} = useForm(registerSubmitHandler, {    
+      [RegisterFormKeys.FirstName]: '',
+      [RegisterFormKeys.LastName]: '',
+      [RegisterFormKeys.Email]: '',
+      [RegisterFormKeys.Password]: '',
+      [RegisterFormKeys.RepeatPassword]: ''
     });
   
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     
-    const [passwordError, setPasswordError] = useState('');
+    // const [passwordError, setPasswordError] = useState('');
 
-    const submitHandler = () => {
-      console.log(formValues);
-      navigate('/')
-    }
+    // const submitHandler = () => {
+    //   console.log(formValues);
+    //   navigate('/')
+    // }
 
-    const lengthValidator = () => {
-          if (formValues.password.length < 3) {
-              setPasswordError('Password should be at least 3 characters')
-          } 
-    }
+    // const lengthValidator = () => {
+    //       if (formValues.password.length < 3) {
+    //           setPasswordError('Password should be at least 3 characters')
+    //       } 
+    // }
 
 
   return (
@@ -35,7 +46,7 @@ export default function Register () {
     <div>
                 <div className={styles.signupSection}>
 
-                      <form method="post" className={styles.signupForm}>
+                      <form className={styles.signupForm} onSubmit={onSubmit}>
                           <h2>Sign Up</h2>
                           <ul className={styles.noBullet}>
                               <li>
@@ -45,8 +56,8 @@ export default function Register () {
                                     className={styles.inputFields} 
                                     id="first-name" 
                                     name='firstname' 
-                                    value={formValues.firstname}
-                                    onChange={changeHandler}
+                                    value={formValues[RegisterFormKeys.FirstName]}
+                                    onChange={onChange}
                                     placeholder="Rumen" 
                                   />
                               </li>
@@ -57,8 +68,8 @@ export default function Register () {
                                     className={styles.inputFields} 
                                     id="last-name" 
                                     name='lastname'  
-                                    value={formValues.lastname}
-                                    onChange={changeHandler}
+                                    value={formValues[RegisterFormKeys.LastName]}
+                                    onChange={onChange}
                                     placeholder="Nazarov" 
                                   />
                               </li>
@@ -69,8 +80,8 @@ export default function Register () {
                                     className={styles.inputFields} 
                                     id="email" 
                                     name='email'  
-                                    value={formValues.email}
-                                    onChange={changeHandler}
+                                    value={formValues[RegisterFormKeys.Email]}
+                                    onChange={onChange}
                                     placeholder="rutsmata@gmail.com" 
                                   />
                               </li>
@@ -81,14 +92,14 @@ export default function Register () {
                                     className={styles.inputFields} 
                                     id="password" 
                                     name='password' 
-                                    value={formValues.password}
-                                    onChange={changeHandler}
+                                    value={formValues[RegisterFormKeys.Password]}
+                                    onChange={onChange}
                                     placeholder="******" 
-                                    onBlur={lengthValidator}
+                                    // onBlur={lengthValidator}
                                   />
-                                    {passwordError && (
+                                    {/* {passwordError && (
                                         <p className={styles.errorMessage}>{passwordError}</p>
-                                    )}
+                                    )} */}
                               </li>
                               <li>
                                   <label htmlFor="repeat-password">Repeat-Password:</label>
@@ -97,14 +108,17 @@ export default function Register () {
                                     className={styles.inputFields} 
                                     id="repeat-password" 
                                     name='repeatPassword' 
-                                    value={formValues.repeatPassword}
-                                    onChange={changeHandler}
+                                    value={formValues[RegisterFormKeys.RepeatPassword]}
+                                    onChange={onChange}
                                     placeholder="******" 
                                   />
                               </li>
-                              <li id="center-btn">
+
+                              <input type="submit" className={styles['join-btn']} value="JOIN" />
+
+                              {/* <li id="center-btn">
                                   <button className={styles['join-btn']} type="button" onClick={submitHandler} disabled={Object.values(passwordError).some(x => x)}>JOIN</button>                                 
-                              </li>
+                              </li> */}
                           </ul>
                       </form>
                       </div>

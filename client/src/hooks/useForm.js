@@ -3,6 +3,8 @@ import { useState } from "react";
 export default function useForm (submitHandler, formInitialState) {
     const [formValues, setFormValues] = useState(formInitialState);
 
+    // useEffect - firts added then removed
+
     const onChange = (e) => {
         setFormValues(state => ({
             ...state,

@@ -36,7 +36,7 @@ export default function CreateArticle () {
               <div className={styles.createSection}>
 
                 <form  method="post" className={styles.createForm}>
-                  <h2>Create Article</h2>
+                  <h2>Edit Article</h2>
                   <ul className={styles.noBullet}>
                   <li>
                       <label htmlFor="author">Author:</label>

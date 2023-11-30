@@ -35,3 +35,14 @@ export const register = async (email, password) => {
 
     return await response.json();
 }
+
+export const logout = () => {
+    const response = fetch (`${baseUrl}/logout`);
+
+    if (response.status === 204) {
+        return{}
+    }
+
+    return response
+
+}

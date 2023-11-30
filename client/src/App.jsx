@@ -12,6 +12,7 @@ import ArticleDetails from "./components/articles/ArticleDetails";
 import CreateArticle from "./components/articles/CreateArticle";
 import HomePage from "./components/home/HomePage";
 import Login from "./components/login/Login";
+import Logout from "./components/logout/logout";
 import Register from "./components/register/Register";
 import About from "./components/about/About";
 import AboutMore from "./components/about/AboutMore";
@@ -22,13 +23,20 @@ import Footer from "./components/footer/Footer";
 
 function App() {
   const navigate = useNavigate();
-  const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useState(() => {
+    localStorage.removeItem('accessToken');
+
+    return {};
+  });
 
   const loginSubmitHandler = async (formValues) => {
     const result = await authAPI.login(formValues.email, formValues.password);
     // implement error handling for password mismatch
 
     setAuth(result);
+
+    localStorage.setItem('accessToken', result.accessToken);
+
     navigate(Path.Home);
   };
 
@@ -36,47 +44,35 @@ function App() {
     const result = await authAPI.register(formValues.email, formValues.password);
     // implement error handling for same user
 
-    console.log(result);
-
     setAuth(result);
+
+    localStorage.setItem('accessToken', result.accessToken);
+
     navigate(Path.Home);
   }
 
-  // const [isAuth, setIsAuth] = useState(false);
+  const logoutHandler = () => {
+    setAuth({});
 
-  // useEffect(() => {
-  //       // check login -> chekck login based of token stored in local/storage.
-  //       // if yes set is isAuth to true
-  //       isAuthCheck();
-  // }, []);
+    localStorage.removeItem('accessToken');
+  }
 
-  // function isAuthCheck() {
-  //       const token = localStorage.getItem('token');
-  //       if (!token) {
-  //             setIsAuth(false);
-  //       }
-
-  //       if (token) {
-  //       fetch('/users/me', {
-  //             headers: {
-  //                   'X-Authorization' : token
-  //             }
-  //       })
-  //       .then(() => {
-  //             setIsAuth(true);
-  //       })
-  //       .catch(err => {
-  //             setIsAuth(false);
-  //       });
-  //       }
-  // }
+  const token = localStorage.getItem('accessToken');
+  if (token) {
+    fetch('http://localhost:3030/users', {
+          headers: {
+                'X-Authorization' : token
+          }
+    })
+}
 
   const values = {
     loginSubmitHandler,
     registerSubmitHandler,
+    logoutHandler,
     email: auth.email,
-    username: auth.username,
-    isAuth: !!auth.username,
+    username: auth.username || auth.email,
+    isAuth: !!auth.accessToken,
   }
 
   return (
@@ -90,6 +86,7 @@ function App() {
           <Route path={Path.Home} element={<HomePage />} />
           <Route path={Path.Register} element={<Register />} />
           <Route path={Path.Login} element={<Login />} />
+          <Route path={Path.Logout} element={<Logout/>} />
           <Route path={Path.TestDrive} element={<TestDriveForm />} />
           <Route path={Path.ModalTestDrive} element={<ModalForSuccess />} />
           <Route />

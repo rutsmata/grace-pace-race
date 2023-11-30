@@ -9,11 +9,6 @@ export default function NavBar () {
       username,
     } = useContext(AuthContext);
   
-    function logoutMe() {
-      localStorage.removeItem('token');
-      location.reload();
-    }
-
     return (
         <div>
 
@@ -40,7 +35,7 @@ export default function NavBar () {
                         <Link to="/articles/create" className="nav-link">Create article</Link>               
                       </li>
                       <li className="nav-item">
-                      <button className="ml-4 btn btn-dark mt-1 btn-sm" onClick={logoutMe}>Logout</button>
+                      <Link to={'/logout'} className="ml-4 btn btn-dark mt-1 btn-sm">Logout</Link>
                       </li>
                       
                       <span className="nav-item">|  Welcome {username}!</span>

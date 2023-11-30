@@ -2,6 +2,7 @@ const Path = {
     Home: '/',
     Register: '/register',
     Login: '/login',
+    Logout: '/logout',
     TestDrive: '/test-drive',
     ModalTestDrive: '/test-drive/apply',
     About: '/about',

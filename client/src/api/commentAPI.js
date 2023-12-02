@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3030/jsonstore/comments";
+const baseUrl = "http://localhost:3030/data/comments";
 
 export const getAll = async (articleId) => {
     const query = new URLSearchParams({
@@ -9,9 +9,9 @@ export const getAll = async (articleId) => {
     const result = await response.json();
 
     //filter is missing as per Papazov code .filter(comment => comment.articledId === articleId)
-    const data = Object.values(result)
+    // const data = Object.values(result)
 
-    return data;
+    return result;
 
 };
 

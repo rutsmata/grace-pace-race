@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -8,8 +8,10 @@ import { formatDate } from "../../utils/dataUtils"
 import styles from './CreateArticle.module.css'
 
 import Comments from "../comments/comments";
+import AuthContext from "../../contexts/AuthContext";
 
 export default function ArticleDetails () {
+    const {email, userId} = useContext(AuthContext)
     const [articleDetails, setArticleDetails] = useState({});
     const navigate = useNavigate();
     const {articleId} = useParams();
@@ -27,6 +29,8 @@ export default function ArticleDetails () {
             navigate('/articles')
             // setArticleDetails(state => state.filter(x => x._id !== articleId))
         }
+
+    const isOwner = userId === articleDetails._ownerId;
 
 
     return (
@@ -61,13 +65,15 @@ export default function ArticleDetails () {
                             {articleDetails.description}
                             </p>
                             
-                                {/* Edit/delete buttons (Only for creator of this game) */}
+                            <Link to="/articles" className={styles['back-btn']}>Back</Link>
+                                {isOwner && (
 
                                 <div className="form-group col-18">
                                     <button onClick={() => onEditArticleClick(articleId)} className={styles['edit-btn']}>Edit</button>
                                     <button onClick={() => onDeleteArticleClick(articleId)} className={styles['del-btn']}>Delete</button>
-                                    <Link to="/articles" className={styles['back-btn']}>Back</Link>
                                 </div>
+                                )}
+
                         </div>
 
                             <Comments/>

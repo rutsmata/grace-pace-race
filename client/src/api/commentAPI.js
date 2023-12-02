@@ -2,13 +2,16 @@ const baseUrl = "http://localhost:3030/data/comments";
 
 export const getAll = async (articleId) => {
     const query = new URLSearchParams({
-        where: `articleId="${articleId}"`
+        where: `articleId="${articleId}"`,
+        load: `owner=_ownerId:users`
     });
 
-    const response = await fetch(`${baseUrl}?${query}`);
+    const response = await fetch(`${baseUrl}`);
     const result = await response.json();
 
-    return result;
+    const data = Object.values(result)
+
+    return data;
 
 };
 

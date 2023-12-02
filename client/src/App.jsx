@@ -2,7 +2,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import * as authAPI from "./api/authAPI";
-import AuthContext from "./contexts/AuthContext";
+import {AuthProvider} from "./contexts/AuthContext";
 import Path from "./paths";
 
 import Header from "./components/header/Header";
@@ -59,7 +59,7 @@ function App() {
 
   const token = localStorage.getItem('accessToken');
 
-  const values = {
+  const value = {
     loginSubmitHandler,
     registerSubmitHandler,
     logoutHandler,
@@ -70,7 +70,7 @@ function App() {
   }
 
   return (
-    <AuthContext.Provider value={ values }>
+    <AuthProvider value={ value }>
       <>
         <Header />
 
@@ -95,7 +95,7 @@ function App() {
 
         <Footer />
       </>
-    </AuthContext.Provider>
+    </AuthProvider>
   );
 }
 

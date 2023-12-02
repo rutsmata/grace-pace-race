@@ -16,7 +16,6 @@ export default function CreateArticle () {
       e.preventDefault();
 
       const data = Object.fromEntries(new FormData(e.currentTarget));
-      console.log(data);
 
       try {
         await articleAPI.create(data, token)

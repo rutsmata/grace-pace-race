@@ -15,7 +15,7 @@ export const getAll = async (articleId) => {
 export const create = async (data, token) => {
     const body = {
         username: data.username,  
-        comment: data.comment,  
+        comment: data.comment, 
 
     }
  

@@ -43,7 +43,6 @@ export default function Comments () {
         try {
             const newComment = await commentAPI.create(formValues, token)
             setComments(state => [...state, newComment])
-            console.log(formValues);
             
         } catch (error) {
             console.log((error));

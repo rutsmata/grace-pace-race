@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 import * as commentAPI from '../../api/commentAPI'
 
 import styles from './Comments.module.css'
+import AuthContext from '../../contexts/AuthContext'
 
 const formInitialState = {
     username: '',
@@ -12,6 +13,8 @@ const formInitialState = {
 }
 
 export default function Comments () {
+    const {token} = useContext(AuthContext);
+    
     const [formValues, setFormValues] = useState(formInitialState);
     const [comments, setComments] = useState([]);
     const {articleId} = useParams();
@@ -38,7 +41,7 @@ export default function Comments () {
         e.preventDefault()
         
         try {
-            const newComment = await commentAPI.create(formValues)
+            const newComment = await commentAPI.create(formValues, token)
             setComments(state => [...state, newComment])
             console.log(formValues);
             

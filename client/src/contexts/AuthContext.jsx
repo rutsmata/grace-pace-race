@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 
 import * as authAPI from "../api/authAPI";
 import Path from "../paths";
+import usePersistedState from "../hooks/usePersistedState";
 
 const AuthContext = createContext();
 
@@ -11,11 +12,7 @@ export const AuthProvider = ({
 }) => {
 
     const navigate = useNavigate();
-    const [auth, setAuth] = useState(() => {
-      localStorage.removeItem('accessToken');
-  
-      return {};
-    });
+    const [auth, setAuth] = usePersistedState('auth', {});
   
     const loginSubmitHandler = async (formValues) => {
       const result = await authAPI.login(formValues.email, formValues.password);

@@ -1,13 +1,11 @@
-const baseUrl = "http://localhost:3030/jsonstore/articles";
+const baseUrl = "http://localhost:3030/data/articles";
 
 export const getAll = async () => {
 
     const response = await fetch(baseUrl);
     const result = await response.json();
 
-    const data = Object.values(result);
-
-    return data;
+    return result
 
 };
 
@@ -25,7 +23,7 @@ export const deleteArticle = async (articleId) => {
     })
 }
 
-export const create = async (data) => {
+export const create = async (data, token) => {
     const body = {
         title: data.title,  
         description: data.description,  
@@ -38,7 +36,8 @@ export const create = async (data) => {
     const response = await fetch(baseUrl, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'X-Authorization' : token,
         },
         body: JSON.stringify(body)
     })

@@ -1,33 +1,31 @@
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react';
 
+import AuthContext from '../../contexts/AuthContext';
 import * as articleAPI from '../../api/articleAPI'
 
 import styles from './CreateArticle.module.css'
 import useForm from '../../hooks/useForm'
 
 export default function CreateArticle () {
-  
-    const {formValues, changeHandler} = useForm({    
-      author: '',
-      title: '',
-      description: '',
-      img: '',
-      type: ''
-    });
+    const {token} = useContext(AuthContext)
     
     const navigate = useNavigate();
 
     const submitHandler = async (e) => {
       e.preventDefault();
 
+      const data = Object.fromEntries(new FormData(e.currentTarget));
+      console.log(data);
+
       try {
-        await articleAPI.create(formValues)
+        await articleAPI.create(data, token)
+        navigate('/articles')
 
       } catch (error) {
         console.log((error));
         
       }
-      navigate('/articles')
     }
 
  
@@ -35,7 +33,7 @@ export default function CreateArticle () {
         <>              
               <div className={styles.createSection}>
 
-                <form  method="post" className={styles.createForm}>
+                <form className={styles.createForm} onSubmit={submitHandler}>
                   <h2>Create Article</h2>
                   <ul className={styles.noBullet}>
                   <li>
@@ -46,8 +44,6 @@ export default function CreateArticle () {
                         id="author"
                         placeholder="First Name & Last Name"
                         name="author"
-                        value={formValues.author}
-                        onChange={changeHandler}
                       />
                     </li>
                     <li>
@@ -58,8 +54,6 @@ export default function CreateArticle () {
                         id="title"
                         placeholder="Article Title"
                         name="title"
-                        value={formValues.title}
-                        onChange={changeHandler}
                       />
                     </li>
                     
@@ -69,8 +63,6 @@ export default function CreateArticle () {
                           id="type" 
                           name="type" 
                           className={styles.inputFields} 
-                          onChange={changeHandler} 
-                          value={formValues.type}
                       >
                               <option  >Select Genre</option>
                                 <option value='general' >General</option>
@@ -86,8 +78,6 @@ export default function CreateArticle () {
                         className={styles.inputFields}
                         name="description"
                         placeholder="Article Text Here..."
-                        value={formValues.description}
-                        onChange={changeHandler}
                       ></textarea>
                     </li>
                     <li>
@@ -98,12 +88,10 @@ export default function CreateArticle () {
                         id="img"
                         placeholder="http://..."
                         name="img"
-                        value={formValues.img}
-                        onChange={changeHandler}
                       />
                     </li>
                     <li id="center-btn">
-                      <button className={styles['create-btn']} type="button" onClick={submitHandler}>Create</button>
+                      <input className={styles['create-btn']} type="submit" value="Create Article"/>
                     </li>
                   </ul>
                 </form>

@@ -58,13 +58,6 @@ function App() {
   }
 
   const token = localStorage.getItem('accessToken');
-  if (token) {
-    fetch('http://localhost:3030/users', {
-          headers: {
-                'X-Authorization' : token
-          }
-    })
-}
 
   const values = {
     loginSubmitHandler,
@@ -73,6 +66,7 @@ function App() {
     email: auth.email,
     username: auth.username || auth.email,
     isAuth: !!auth.accessToken,
+    token,
   }
 
   return (

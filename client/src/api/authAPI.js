@@ -37,7 +37,12 @@ export const register = async (email, password) => {
 }
 
 export const logout = () => {
-    const response = fetch (`${baseUrl}/logout`);
+    const response = fetch (`${baseUrl}/logout`, {
+        method: "GET",
+        headers: {
+            "X-Authorization": localStorage.getItem('accessToken')
+        }
+    });
 
     if (response.status === 204) {
         return{}

@@ -13,7 +13,7 @@ import { pathToUrl } from "../../utils/pathUtils";
 import Path from "../../paths";
 
 export default function ArticleDetails () {
-    const {email, userId} = useContext(AuthContext)
+    const {email, userId, token} = useContext(AuthContext)
     const [articleDetails, setArticleDetails] = useState({});
     const navigate = useNavigate();
     const {articleId} = useParams();
@@ -26,14 +26,18 @@ export default function ArticleDetails () {
             
         }, [articleId]);
         
-    const onDeleteArticleClick = async (articleId) => {
-            await articleAPI.deleteArticle(articleId)
-            navigate('/articles')
-            // setArticleDetails(state => state.filter(x => x._id !== articleId))
+    const DeleteArticleClickHandler = async (articleId) => {
+            const confirmDelete = confirm(`Are you sure you want to delete ${articleDetails.title}`);
+
+            if (confirmDelete) {
+
+                await articleAPI.deleteArticle(articleId)
+                navigate('/articles')
+            }
+
         }
 
     const isOwner = userId === articleDetails._ownerId;
-
 
     return (
         <>
@@ -75,8 +79,9 @@ export default function ArticleDetails () {
 
                             <div className="form-group col-18">
                                 <Link to={pathToUrl(Path.ArticleDetailsEdit, {articleId})} className={styles['edit-btn']}>Edit</Link>
-                                <Link to={pathToUrl(Path.ArticleDetailsDelete, {articleId})} className={styles['del-btn']}>Delete</Link>
+                                <button onClick={DeleteArticleClickHandler} className={styles['del-btn']}>Delete</button>
                             </div>
+                            
                             )}
 
                         </div>

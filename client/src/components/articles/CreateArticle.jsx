@@ -5,7 +5,6 @@ import AuthContext from '../../contexts/AuthContext';
 import * as articleAPI from '../../api/articleAPI'
 
 import styles from './CreateArticle.module.css'
-import useForm from '../../hooks/useForm'
 
 export default function CreateArticle () {
     const {token} = useContext(AuthContext)

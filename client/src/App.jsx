@@ -35,8 +35,6 @@ function App() {
                   <Route path={Path.Home} element={<HomePage />} />
                   <Route path={Path.Register} element={<Register />} />
                   <Route path={Path.Login} element={<Login />} />
-                  <Route path={Path.TestDrive} element={<TestDriveForm />} />
-                  <Route path={Path.ModalTestDrive} element={<ModalForSuccess />} />
                   <Route />
                   <Route path={Path.About} element={<About />} />
                   <Route path={Path.Video} element={<AboutMore />} />
@@ -49,6 +47,8 @@ function App() {
                         <Route path={Path.CreateArticle} element={<CreateArticle />} />  
                         <Route path={Path.ArticleDetailsEdit} element={<EditArticle />} />    
                         <Route path={Path.Logout} element={<Logout/>} />
+                        <Route path={Path.TestDrive} element={<TestDriveForm />} />
+                        <Route path={Path.ModalTestDrive} element={<ModalForSuccess />} />
                   </Route>
             </Routes>
 

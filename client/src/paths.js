@@ -10,6 +10,8 @@ const Path = {
     Articles: '/articles',
     CreateArticle: '/articles/create',
     ArticleDetails: '/articles/:articleId',
+    ArticleDetailsEdit: '/articles/:articleId/edit',
+    ArticleDetailsDelete: '/articles/:articleId/delete',
     404: '*'
 
 }

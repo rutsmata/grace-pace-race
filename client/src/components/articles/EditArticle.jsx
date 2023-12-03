@@ -1,13 +1,15 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 import * as articleAPI from '../../api/articleAPI'
 
 import styles from './CreateArticle.module.css'
 import useForm from '../../hooks/useForm'
 
-export default function CreateArticle () {
-  
-    const {formValues, onChange} = useForm({    
+export default function EditArticle () {
+    const navigate = useNavigate();
+    const {articleId} = useParams();
+    const {articleDetails, setArticleDetails} = useState({    
       author: '',
       title: '',
       description: '',
@@ -15,13 +17,21 @@ export default function CreateArticle () {
       type: ''
     });
     
-    const navigate = useNavigate();
-
+    useEffect (() => {
+      articleAPI.getOne(articleId)
+      .then(result => {
+        setArticleDetails(result)
+      })
+    }, [articleId])
+    
     const submitHandler = async (e) => {
       e.preventDefault();
 
+      const formValues = Object.fromEntries(new FormData(e.currentTarget));
+
+
       try {
-        await articleAPI.create(formValues)
+        await articleAPI.edit(articleId, formValues)
 
       } catch (error) {
         console.log((error));
@@ -30,12 +40,19 @@ export default function CreateArticle () {
       navigate('/articles')
     }
 
+    const onChange = (e) => {
+      setArticleDetails(state => ({
+          ...state,
+          [e.target.name]: e.target.value
+      }));
+  };
+
  
     return (
         <>              
               <div className={styles.createSection}>
 
-                <form  method="post" className={styles.createForm}>
+                <form className={styles.createForm} onSubmit={submitHandler}>
                   <h2>Edit Article</h2>
                   <ul className={styles.noBullet}>
                   <li>
@@ -46,7 +63,7 @@ export default function CreateArticle () {
                         id="author"
                         placeholder="First Name & Last Name"
                         name="author"
-                        value={formValues.author}
+                        value={articleDetails.author}
                         onChange={onChange}
                       />
                     </li>
@@ -58,7 +75,7 @@ export default function CreateArticle () {
                         id="title"
                         placeholder="Article Title"
                         name="title"
-                        value={formValues.title}
+                        value={articleDetails.title}
                         onChange={onChange}
                       />
                     </li>
@@ -70,7 +87,7 @@ export default function CreateArticle () {
                           name="type" 
                           className={styles.inputFields} 
                           onChange={onChange} 
-                          value={formValues.type}
+                          value={articleDetails.type}
                       >
                               <option  >Select Genre</option>
                                 <option value='general' >General</option>
@@ -86,7 +103,7 @@ export default function CreateArticle () {
                         className={styles.inputFields}
                         name="description"
                         placeholder="Article Text Here..."
-                        value={formValues.description}
+                        value={articleDetails.description}
                         onChange={onChange}
                       ></textarea>
                     </li>
@@ -98,12 +115,12 @@ export default function CreateArticle () {
                         id="img"
                         placeholder="http://..."
                         name="img"
-                        value={formValues.img}
+                        value={articleDetails.img}
                         onChange={onChange}
                       />
                     </li>
                     <li id="center-btn">
-                      <button className={styles['create-btn']} type="button" onClick={submitHandler}>Create</button>
+                      <input className={styles['create-btn']} type="submit" value="Edit Article"/>
                     </li>
                   </ul>
                 </form>

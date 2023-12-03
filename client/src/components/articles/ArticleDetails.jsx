@@ -9,6 +9,8 @@ import styles from './CreateArticle.module.css'
 
 import Comments from "../comments/comments";
 import AuthContext from "../../contexts/AuthContext";
+import { pathToUrl } from "../../utils/pathUtils";
+import Path from "../../paths";
 
 export default function ArticleDetails () {
     const {email, userId} = useContext(AuthContext)
@@ -64,15 +66,18 @@ export default function ArticleDetails () {
                             <p>
                             {articleDetails.description}
                             </p>
-                            
-                            <Link to="/articles" className={styles['back-btn']}>Back</Link>
-                                {isOwner && (
 
-                                <div className="form-group col-18">
-                                    <button onClick={() => onEditArticleClick(articleId)} className={styles['edit-btn']}>Edit</button>
-                                    <button onClick={() => onDeleteArticleClick(articleId)} className={styles['del-btn']}>Delete</button>
-                                </div>
-                                )}
+                            <div className="form-group col-18">
+                                <Link to="/articles" className={styles['back-btn']}>Back</Link>
+                            </div>
+
+                            {isOwner && (
+
+                            <div className="form-group col-18">
+                                <Link to={pathToUrl(Path.ArticleDetailsEdit, {articleId})} className={styles['edit-btn']}>Edit</Link>
+                                <Link to={pathToUrl(Path.ArticleDetailsDelete, {articleId})} className={styles['del-btn']}>Delete</Link>
+                            </div>
+                            )}
 
                         </div>
 

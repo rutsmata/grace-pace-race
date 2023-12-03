@@ -11,7 +11,6 @@ const Path = {
     CreateArticle: '/articles/create',
     ArticleDetails: '/articles/:articleId',
     ArticleDetailsEdit: '/articles/:articleId/edit',
-    ArticleDetailsDelete: '/articles/:articleId/delete',
     404: '*'
 
 }

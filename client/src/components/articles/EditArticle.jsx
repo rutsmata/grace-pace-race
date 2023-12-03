@@ -38,6 +38,13 @@ export default function EditArticle() {
     navigate("/articles");
   };
 
+//   const onChange = (e) => {
+//     setArticleDetails(state => ({
+//         ...state,
+//         [e.target.name]: e.target.value
+//     }));
+// };
+
 
   return (
     <>
@@ -54,6 +61,7 @@ export default function EditArticle() {
                 placeholder="First Name & Last Name"
                 name="author"
                 // value={articleDetails.author}
+                // onChange={onChange}
               />
             </li>
             <li>
@@ -65,6 +73,7 @@ export default function EditArticle() {
                 placeholder="Article Title"
                 name="title"
                 // value={articleDetails.title}
+                // onChange={onChange}
 
               />
             </li>
@@ -76,6 +85,7 @@ export default function EditArticle() {
                 name="type"
                 className={styles.inputFields}
                 // value={articleDetails.type}
+                // onChange={onChange}
 
               >
                 <option>Select Genre</option>
@@ -93,6 +103,7 @@ export default function EditArticle() {
                 name="description"
                 placeholder="Article Text Here..."
                 // value={articleDetails.description}
+                // onChange={onChange}
 
               ></textarea>
             </li>
@@ -105,7 +116,7 @@ export default function EditArticle() {
                 placeholder="http://..."
                 name="img"
                 // value={articleDetails.img}
-
+                // onChange={onChange}
               />
             </li>
             <li id="center-btn">

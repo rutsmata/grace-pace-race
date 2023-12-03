@@ -1,5 +1,4 @@
 import { useContext, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
 
 import styles from './Register.module.css'
 import useForm from '../../hooks/useForm';
@@ -24,21 +23,14 @@ export default function Register () {
       [RegisterFormKeys.Password]: '',
       [RegisterFormKeys.RepeatPassword]: ''
     });
-  
-    // const navigate = useNavigate();
-    
-    // const [passwordError, setPasswordError] = useState('');
+     
+    const [passwordError, setPasswordError] = useState('');
 
-    // const submitHandler = () => {
-    //   console.log(formValues);
-    //   navigate('/')
-    // }
-
-    // const lengthValidator = () => {
-    //       if (formValues.password.length < 3) {
-    //           setPasswordError('Password should be at least 3 characters')
-    //       } 
-    // }
+    const lengthValidator = () => {
+          if (formValues.password.length < 3) {
+              setPasswordError('Password should be at least 3 characters')
+          } 
+    }
 
 
   return (
@@ -95,11 +87,11 @@ export default function Register () {
                                     value={formValues[RegisterFormKeys.Password]}
                                     onChange={onChange}
                                     placeholder="******" 
-                                    // onBlur={lengthValidator}
+                                    onBlur={lengthValidator}
                                   />
-                                    {/* {passwordError && (
+                                    {passwordError && (
                                         <p className={styles.errorMessage}>{passwordError}</p>
-                                    )} */}
+                                    )}
                               </li>
                               <li>
                                   <label htmlFor="repeat-password">Repeat-Password:</label>
@@ -116,9 +108,6 @@ export default function Register () {
 
                               <input type="submit" className={styles['join-btn']} value="JOIN" />
 
-                              {/* <li id="center-btn">
-                                  <button className={styles['join-btn']} type="button" onClick={submitHandler} disabled={Object.values(passwordError).some(x => x)}>JOIN</button>                                 
-                              </li> */}
                           </ul>
                       </form>
                       </div>

@@ -13,7 +13,7 @@ import { pathToUrl } from "../../utils/pathUtils";
 import Path from "../../paths";
 
 export default function ArticleDetails () {
-    const {email, userId, token} = useContext(AuthContext)
+    const {userId, token} = useContext(AuthContext)
     const [articleDetails, setArticleDetails] = useState({});
     const navigate = useNavigate();
     const {articleId} = useParams();

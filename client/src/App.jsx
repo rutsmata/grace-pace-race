@@ -8,6 +8,7 @@ import NavBar from "./components/navigation/NavBar";
 import ArticleList from "./components/articles/ArticleList";
 import ArticleDetails from "./components/articles/ArticleDetails";
 import CreateArticle from "./components/articles/CreateArticle";
+import EditArticle from "./components/articles/EditArticle";
 import HomePage from "./components/home/HomePage";
 import Login from "./components/login/Login";
 import Logout from "./components/logout/logout";
@@ -18,36 +19,41 @@ import TestDriveForm from "./components/test-drive/TestDriveForm";
 import ModalForSuccess from "./components/test-drive/ModalForSuccess";
 import NotFound from "./components/not-found/NotFound";
 import Footer from "./components/footer/Footer";
+import AuthGuard from "./components/guards/AuthGuard";
 
 function App() {
 
 
   return (
     <AuthProvider>
-      <>
-        <Header />
+          
+            <Header />
 
-        <NavBar/>
+            <NavBar/>
 
-        <Routes>
-          <Route path={Path.Home} element={<HomePage />} />
-          <Route path={Path.Register} element={<Register />} />
-          <Route path={Path.Login} element={<Login />} />
-          <Route path={Path.Logout} element={<Logout/>} />
-          <Route path={Path.TestDrive} element={<TestDriveForm />} />
-          <Route path={Path.ModalTestDrive} element={<ModalForSuccess />} />
-          <Route />
-          <Route path={Path.About} element={<About />} />
-          <Route path={Path.Video} element={<AboutMore />} />
-          <Route />
-          <Route path={Path.Articles} element={<ArticleList />} />
-          <Route path={Path.CreateArticle} element={<CreateArticle />} />
-          <Route path={Path.ArticleDetails} element={<ArticleDetails />} />
-          <Route path={Path[404]} element={<NotFound />} />
-        </Routes>
+            <Routes>
+                  <Route path={Path.Home} element={<HomePage />} />
+                  <Route path={Path.Register} element={<Register />} />
+                  <Route path={Path.Login} element={<Login />} />
+                  <Route path={Path.TestDrive} element={<TestDriveForm />} />
+                  <Route path={Path.ModalTestDrive} element={<ModalForSuccess />} />
+                  <Route />
+                  <Route path={Path.About} element={<About />} />
+                  <Route path={Path.Video} element={<AboutMore />} />
+                  <Route />
+                  <Route path={Path.Articles} element={<ArticleList />} />
+                  <Route path={Path.ArticleDetails} element={<ArticleDetails />} />
+                  <Route path={Path[404]} element={<NotFound />} />
 
-        <Footer />
-      </>
+                  <Route element={<AuthGuard/>}>
+                        <Route path={Path.CreateArticle} element={<CreateArticle />} />  
+                        <Route path={Path.ArticleDetailsEdit} element={<EditArticle />} />    
+                        <Route path={Path.Logout} element={<Logout/>} />
+                  </Route>
+            </Routes>
+
+            <Footer />
+          
     </AuthProvider>
   );
 }

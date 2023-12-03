@@ -36,8 +36,8 @@ function App() {
                   <Route path={Path.Register} element={<Register />} />
                   <Route path={Path.Login} element={<Login />} />
                   <Route />
-                  <Route path={Path.About} element={<About />} />
-                  <Route path={Path.Video} element={<AboutMore />} />
+                        <Route path={Path.About} element={<About />} />
+                        <Route path={Path.Video} element={<AboutMore />} />
                   <Route />
                   <Route path={Path.Articles} element={<ArticleList />} />
                   <Route path={Path.ArticleDetails} element={<ArticleDetails />} />

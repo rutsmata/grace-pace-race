@@ -11,6 +11,6 @@ export default function AuthGuard(props) {
         return <Navigate to={Path.Login} />;
     }
 
-    return   <Outlet/>
+    return   <Outlet/>;
     
 }

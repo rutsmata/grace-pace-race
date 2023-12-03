@@ -12,7 +12,7 @@ import { formatDate } from "../../utils/dataUtils"
 import Comments from "../comments/comments";
 
 export default function ArticleDetails () {
-    const {userId, token} = useContext(AuthContext)
+    const {userId, token} = useContext(AuthContext);
     const [articleDetails, setArticleDetails] = useState({});
     const navigate = useNavigate();
     const {articleId} = useParams();
@@ -21,17 +21,17 @@ export default function ArticleDetails () {
 
         articleAPI.getOne(articleId)
             .then(setArticleDetails)
-            .catch ((err) => navigate('/404'))
+            .catch ((err) => navigate(Path[404]))
             
         }, [articleId]);
         
-    const DeleteArticleClickHandler = async (articleId) => {
+    const DeleteArticleClickHandler = async () => {
             const confirmDelete = confirm(`Are you sure you want to delete ${articleDetails.title}`);
 
             if (confirmDelete) {
 
-                await articleAPI.deleteArticle(articleId)
-                navigate('/articles')
+                await articleAPI.deleteArticle(articleId, token)
+                navigate(Path.Articles)
             }
 
         }

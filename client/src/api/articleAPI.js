@@ -16,9 +16,12 @@ export const getOne = async (articleId) => {
     return articleDetails;
 }
 
-export const deleteArticle = async (articleId) => {
+export const deleteArticle = async (articleId, token) => {
     await fetch(`${baseUrl}/${articleId}`, {
         method: 'DELETE',
+        headers: {
+            "X-Authorization" : token
+        }
 
     })
 }

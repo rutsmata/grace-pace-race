@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom'
+
+import Path from '../../paths'
+
 import styles from './About.module.css'
 
 export default function AppDescription () {
@@ -14,7 +17,7 @@ export default function AppDescription () {
         </div>
 
         <nav>
-            <Link to="/about/more" className={styles.btn}>More info</Link>
+            <Link to={Path.Video} className={styles.btn}>More info</Link>
 
         </nav>
 

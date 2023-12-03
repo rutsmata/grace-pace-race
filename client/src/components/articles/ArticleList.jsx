@@ -16,9 +16,13 @@ export default function ArticleList () {
     }, []) 
 
     const articleDetailsClickHandler = async (articleId) => {
-        // use try catch
-        const articleDetails = await articleAPI.getOne(articleId);
-        setSelectedArticle(articleId);
+        try {
+            await articleAPI.getOne(articleId);
+            setSelectedArticle(articleId);
+            
+        } catch (error) {
+            console.log(error);
+        }
 
     }
 
@@ -41,7 +45,6 @@ export default function ArticleList () {
                 ))}
 
                 {articles.length === 0 && (
-                    // Use css
                     <h3 className="container">No articles yet</h3>
                 )}
            

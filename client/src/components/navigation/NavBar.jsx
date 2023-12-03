@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import {Link} from 'react-router-dom'
 import AuthContext from '../../contexts/AuthContext';
+import Path from '../../paths';
 
 export default function NavBar () {
 
@@ -19,23 +20,23 @@ export default function NavBar () {
 
                     <ul className="navbar-nav">
                       <li className="nav-item">
-                          <Link to="/" className="nav-link">Home</Link>
+                          <Link to={Path.Home} className="nav-link">Home</Link>
                       </li>
                       <li className="nav-item">
-                        <Link to="/articles" className="nav-link">Articles</Link>
+                        <Link to={Path.Articles} className="nav-link">Articles</Link>
                       </li>
                     </ul>
 
                     {isAuth &&
                     <ul className="navbar-nav">
                       <li className="nav-item">
-                        <Link to="/test-drive" className="nav-link">Test drive</Link>
+                        <Link to={Path.TestDrive} className="nav-link">Test drive</Link>
                       </li>
                       <li className="nav-item">
-                        <Link to="/articles/create" className="nav-link">Create article</Link>               
+                        <Link to={Path.CreateArticle} className="nav-link">Create article</Link>               
                       </li>
                       <li className="nav-item">
-                      <Link to={'/logout'} className="ml-4 btn btn-dark mt-1 btn-sm">Logout</Link>
+                      <Link to={Path.Logout} className="ml-4 btn btn-dark mt-1 btn-sm">Logout</Link>
                       </li>
                       
                       <span className="nav-item">|  Welcome {username}!</span>
@@ -45,11 +46,11 @@ export default function NavBar () {
                     {!isAuth &&
                   <div className="navbar-nav ml-auto">
                     <li className="nav-item">
-                      <Link to="/login" className="ml-4 btn btn-dark mt-1 btn-sm">Login</Link>
+                      <Link to={Path.Login} className="ml-4 btn btn-dark mt-1 btn-sm">Login</Link>
                     </li>
 
                     <li className="nav-item">
-                      <Link to="/register" className="ml-4 btn btn-dark mt-1 btn-sm">Register</Link>
+                      <Link to={Path.Register} className="ml-4 btn btn-dark mt-1 btn-sm">Register</Link>
                     </li>
                   </div>
                     }

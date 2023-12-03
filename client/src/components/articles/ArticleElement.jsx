@@ -15,9 +15,9 @@ export default function ArticleElement ({
                 <div className="card-header p-0">
                   <div className="blog-media">
                     <img src={img} alt={`${author}'s Article`} className="w-100" />
-                    <Link to="#" className="badge badge-primary">
+                    <i className="badge badge-primary">
                       {author}
-                    </Link>
+                    </i>
                   </div>
                 </div>
                 <div className="card-body px-0">

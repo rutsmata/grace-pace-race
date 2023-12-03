@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom"
+
+import Path from "../../paths"
+
 export default function HomePage () {
+  
   return (
 
 <div className="container">
 
 <section>
     <div className="feature-posts">
-      <Link to="/about" className="feature-post-item">
+      <Link to={Path.About} className="feature-post-item">
         <span>About</span>
       </Link>
       <a className="feature-post-item">

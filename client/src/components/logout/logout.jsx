@@ -15,7 +15,6 @@ export default function Logout () {
                 logoutHandler();
                 navigate(Path.Home);
             })
-            //logoutHandler added, remove if proble
             .catch(() => {
                 logoutHandler();
                 navigate(Path.Login)

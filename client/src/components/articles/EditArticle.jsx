@@ -2,7 +2,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 
 import * as articleAPI from "../../api/articleAPI";
-
 import styles from "./CreateArticle.module.css";
 import AuthContext from "../../contexts/AuthContext";
 

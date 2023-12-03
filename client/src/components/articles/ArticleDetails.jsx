@@ -3,14 +3,13 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import * as articleAPI from '../../api/articleAPI'
-
-import { formatDate } from "../../utils/dataUtils"
 import styles from './CreateArticle.module.css'
+import AuthContext from "../../contexts/AuthContext";
+import Path from "../../paths";
+import { pathToUrl } from "../../utils/pathUtils";
+import { formatDate } from "../../utils/dataUtils"
 
 import Comments from "../comments/comments";
-import AuthContext from "../../contexts/AuthContext";
-import { pathToUrl } from "../../utils/pathUtils";
-import Path from "../../paths";
 
 export default function ArticleDetails () {
     const {userId, token} = useContext(AuthContext)
@@ -57,12 +56,10 @@ export default function ArticleDetails () {
 
                             <div className="blog-media mb-4">
                             <img src={articleDetails.img} alt="" className="w-100" />
-                            <Link to="#" className="badge badge-primary">{articleDetails.author}</Link>
+                            <i className="badge badge-primary">{articleDetails.author}</i>
                             </div>
                             <small className="small text-muted">
-                                <Link to="#" className="text-muted"> {formatDate(articleDetails.createdAt)}</Link>
-                                <span className="px-2">-</span>
-                                <Link to="#" className="text-muted">Comments {articleDetails.comments?.length} </Link>
+                                <p className="text-muted"> {formatDate(articleDetails.createdAt)}</p>
                             </small>
                         </div>
                         <div className="card-body border-top">
@@ -72,7 +69,7 @@ export default function ArticleDetails () {
                             </p>
 
                             <div className="form-group col-18">
-                                <Link to="/articles" className={styles['back-btn']}>Back</Link>
+                                <Link to={Path.Articles} className={styles['back-btn']}>Back</Link>
                             </div>
 
                             {isOwner && (

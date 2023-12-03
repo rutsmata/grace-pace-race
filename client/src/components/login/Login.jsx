@@ -1,6 +1,4 @@
-import { useNavigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
-import * as authAPI from '../../api/authAPI'
+import { useContext } from 'react';
 import useForm from '../../hooks/useForm';
 
 import styles from './Login.module.css'
@@ -19,33 +17,6 @@ export default function Login () {
     [LoginFormKeys.Password]: '',
   });
   
-    const navigate = useNavigate();
-    
-    // const onSumbit = async (e) => {
-    //   e.preventDefault()
-    //   console.log(formValues);
-    //   navigate('/')
-
-      // try {
-      //   const result = await authAPI.login(formValues.email, formValues.password);
-      //   localStorage.setItem('token', result.accessToken);
-
-      //   navigate('/')
-      //   location.reload();
-
-      // } catch (error) {
-      //     console.log(error);
-      // }
-      // return false;
-    // }
-
-    // const loginDetails = {
-    //   username: auth.username,
-    //   email: auth.email,
-    //   isAuthenticated: !!auth.username,
-    // }
-
-    
 
   return (
 
@@ -82,11 +53,7 @@ export default function Login () {
                   </li>
 
                   <input type="submit" className={styles['login-btn']} value="Login" />
-
-
-                  {/* <li id="center-btn">
-                    <button className={styles['login-btn']} type="button" onClick={onSumbit}>Login</button>
-                  </li> */}
+                  
                 </ul>
               </form>
               </div>

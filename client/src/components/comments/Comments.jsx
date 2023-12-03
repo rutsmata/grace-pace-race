@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 import * as commentAPI from '../../api/commentAPI'
-
 import styles from './Comments.module.css'
 import AuthContext from '../../contexts/AuthContext'
 
@@ -59,7 +58,7 @@ export default function Comments () {
                     {/* for Guests and Users */}
                         <div className="card-footer">
                             <h6 className="mt-5 mb-3 text-center">
-                            <Link to="#" className="text-dark">Comments</Link>
+                            <div className="text-dark">Comments</div>
                             </h6>
                             <hr />
 
@@ -72,8 +71,6 @@ export default function Comments () {
                                         <p>
                                         {comment}
                                         </p>
-                                        <Link to="#" className="text-dark small font-weight-bold"
-                                        ><i className="ti-back-right"></i> Vote</Link>
                                     </div>
                                 ))}
 

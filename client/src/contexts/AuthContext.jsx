@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { createContext, useState } from "react";
+import { createContext } from "react";
 
 import * as authAPI from "../api/authAPI";
 import Path from "../paths";

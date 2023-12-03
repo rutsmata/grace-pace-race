@@ -1,20 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 
 import styles from './TestDriveForm.module.css'
-import useForm from '../../hooks/useForm';
-
+import Path from '../../paths';
 
 export default function TestDriveForm () {
     const navigate = useNavigate();
 
-    const {formValues, changeHandler} = useForm ({
-        firstname: '',
-        lastname: '',
-        subject: ''
-    })
-
     const submitHandler = () => {
-      navigate('/test-drive/apply')
+      navigate(Path.ModalTestDrive)
     }
 
     return (
@@ -34,8 +27,6 @@ export default function TestDriveForm () {
                 id="fname" 
                 name="firstname" 
                 placeholder="Your name.."
-                value={formValues.firstname}
-                onChange={changeHandler}
                 />
                 </div>
             </div>
@@ -49,8 +40,6 @@ export default function TestDriveForm () {
                 id="lname" 
                 name="lastname" 
                 placeholder="Your last name.."
-                value={formValues.lastname}
-                onChange={changeHandler}
                 />
                 </div>
             </div>
@@ -75,8 +64,6 @@ export default function TestDriveForm () {
                 id="subject" 
                 name="subject" 
                 placeholder="Write something.." 
-                value={formValues.subject}
-                onChange={changeHandler}
                 >
 
                 </textarea>

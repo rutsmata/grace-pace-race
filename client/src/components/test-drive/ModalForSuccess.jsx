@@ -1,11 +1,12 @@
 import {Button, Modal} from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import Path from '../../paths';
 
 export default function ModalForSuccess () {
     const navigate = useNavigate()
 
     const exitModal = () => {
-        navigate('/')
+        navigate(Path.Home)
     }
 
     return (

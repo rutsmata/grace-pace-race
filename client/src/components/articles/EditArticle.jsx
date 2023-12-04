@@ -4,25 +4,26 @@ import { useState, useEffect, useContext } from "react";
 import * as articleAPI from "../../api/articleAPI";
 import styles from "./CreateArticle.module.css";
 import AuthContext from "../../contexts/AuthContext";
+import Path from "../../paths";
 
 export default function EditArticle() {
     const {token} = useContext(AuthContext)
   const navigate = useNavigate();
   const { articleId } = useParams();
-  const { articleDetails, setArticleDetails } = useState({
-    author: "",
-    title: "",
-    description: "",
-    img: "",
-    type: "",
-  });
+//   const { articleDetails, setArticleDetails } = useState({
+//     author: "",
+//     title: "",
+//     description: "",
+//     img: "",
+//     type: "",
+//   });
 
-  useEffect(() => {
-    articleAPI.getOne(articleId)
-        .then((result) => {
-            setArticleDetails(result);
-    });
-  }, [articleId]);
+//   useEffect(() => {
+//     articleAPI.getOne(articleId)
+//         .then((result) => {
+//             setArticleDetails(result);
+//     });
+//   }, [articleId]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -31,18 +32,20 @@ export default function EditArticle() {
 
     try {
       await articleAPI.edit(articleId, formValues, token);
+
+      navigate(Path.Articles);
+
     } catch (error) {
       console.log(error);
     }
-    navigate("/articles");
   };
 
-//   const onChange = (e) => {
-//     setArticleDetails(state => ({
-//         ...state,
-//         [e.target.name]: e.target.value
-//     }));
-// };
+  const onChange = (e) => {
+    setArticleDetails(state => ({
+        ...state,
+        [e.target.name]: e.target.value
+    }));
+};
 
 
   return (

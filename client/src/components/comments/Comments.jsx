@@ -55,7 +55,6 @@ export default function Comments () {
     return (
 
         <>
-                    {/* for Guests and Users */}
                         <div className="card-footer">
                             <h6 className="mt-5 mb-3 text-center">
                             <div className="text-dark">Comments</div>
@@ -103,7 +102,6 @@ export default function Comments () {
                                     </textarea>
                                 </div>
                         
-                                {/* Add comment (Only for logged-in users, which is not creator of the current article) */}
                                 <button className={styles['comment-btn']} onClick={addCommentHandler}>
                                     Post Comment
                                 </button>

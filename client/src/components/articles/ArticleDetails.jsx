@@ -12,7 +12,7 @@ import { formatDate } from "../../utils/dataUtils"
 import Comments from "../comments/comments";
 
 export default function ArticleDetails () {
-    const {userId, token} = useContext(AuthContext);
+    const {userId, token, isAuth} = useContext(AuthContext);
     const [articleDetails, setArticleDetails] = useState({});
     const navigate = useNavigate();
     const {articleId} = useParams();
@@ -72,7 +72,7 @@ export default function ArticleDetails () {
                                 <Link to={Path.Articles} className={styles['back-btn']}>Back</Link>
                             </div>
 
-                            {isOwner && (
+                            {isAuth && isOwner && (
 
                             <div className="form-group col-18">
                                 <Link to={pathToUrl(Path.ArticleDetailsEdit, {articleId})} className={styles['edit-btn']}>Edit</Link>
